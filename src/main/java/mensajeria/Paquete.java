@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.swing.JOptionPane;
 
+import comandos.Nada;
+
 public class Paquete implements Serializable, Cloneable {
 
 	public static String msjExito = "1";
@@ -12,6 +14,7 @@ public class Paquete implements Serializable, Cloneable {
 	private String mensaje;
 	private String ip;
 	private int comando;
+	
 	public Paquete() {
 
 	}
@@ -74,7 +77,7 @@ public class Paquete implements Serializable, Cloneable {
 			c = (Comando) Class.forName(nombrePaquete + "." + Comando.CLASSNAMES[comando]).newInstance();
 			return c;
 		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
-			return null;
+			return new Nada();
 		}
 
 	}
@@ -84,7 +87,7 @@ public class Paquete implements Serializable, Cloneable {
 			c = (Comando) Class.forName(nombrePaquete + "." + Comando.CLASSNAMESBIS[accion]).newInstance();
 			return c;
 		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
-			return null;
+			return new Nada();
 		}
 
 	}
