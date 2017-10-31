@@ -2,6 +2,10 @@ package mensajeria;
 
 import java.io.Serializable;
 
+/**
+ * Similar a PaqueteBatalla, aca se carga el paquete que contiene quien es el enemigo y quien
+ * ganó la batalla. Se envía por Gson.
+ */
 public class PaqueteFinalizarBatalla extends Paquete implements Serializable, Cloneable {
 
 	private int id;

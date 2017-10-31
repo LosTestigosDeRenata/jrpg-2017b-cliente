@@ -3,6 +3,7 @@ package mensajeria;
 import java.io.Serializable;
 import java.util.Map;
 
+
 public class PaqueteDeMovimientos extends Paquete implements Serializable, Cloneable {
 
 	private Map<Integer, PaqueteMovimiento> personajes;

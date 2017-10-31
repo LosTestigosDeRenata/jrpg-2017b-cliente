@@ -2,6 +2,12 @@ package mensajeria;
 
 import com.google.gson.Gson;
 
+/**
+ * 
+ * Clase abstracta que contiene variables estaticas que representan los comando disponibles
+ * Utilizada para crear el paquete que se envia por Gson
+ *
+ */
 public abstract class Comando {
 	// Nombre del paquete donde se encuentran las clases con las responsabilidades
 	public static final String NOMBREPAQUETE = "comandos";
@@ -9,7 +15,7 @@ public abstract class Comando {
 			"Movimiento", "Registro", "Salir", "Batalla", "Atacar", "FinalizarBatalla", "ActualizarPersonaje", "ActualizarPersonajeLvl", "ActualizarInventario", "Comercio", "ActualizarComercio", "Trueque", "ActualizarTrueque", "Talk", "ActualizarNpcs"};
 	public static final String[] CLASSNAMESBIS = { "Conexion", "CrearPersonaje", "Desconectar", "InicioSesionSet", "MostrarMapas",
 			"Movimiento", "RegistroSet", "SalirSet", "Batalla", "Atacar", "FinalizarBatalla", "ActualizarPersonaje", "ActualizarPersonajeLvl", "ActualizarInventario", "Comercio", "ActualizarComercio", "Trueque", "ActualizarTrueque", "Talk", "ActualizarNpcs"};
-	
+	//variables estaticas que representan los comandos disponibles
 	public static final int CONEXION = 0;
 	public static final int CREACIONPJ = 1;
 	public static final int DESCONECTAR = 2;

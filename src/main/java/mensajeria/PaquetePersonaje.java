@@ -11,6 +11,10 @@ import dominio.Item;
 import estados.Estado;
 import sun.text.resources.cldr.es.FormatData_es_EC;
 
+/**
+ * Clase para setear las caracteristicas del personaje. Se envia por Gson. Incluye un ArrayList
+ * de Items que son actualizables desde el server a travez de consultas a la base de datos
+ */
 public class PaquetePersonaje extends Paquete implements Serializable, Cloneable {
 
 	private int id;
@@ -27,6 +31,7 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
 	private int nivel = 1;
 	private int experiencia;
 	private int puntosSkill = 0;
+
 	private ArrayList<Item> items = new ArrayList<Item>();
 	
 	public PaquetePersonaje() throws IOException {

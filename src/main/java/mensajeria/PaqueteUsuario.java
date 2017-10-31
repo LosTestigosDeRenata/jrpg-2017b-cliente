@@ -2,6 +2,10 @@ package mensajeria;
 
 import java.io.Serializable;
 
+/**
+ * Crea un paquete con el nombre de usuario y su clave para ser enviada al server. Se utiliza
+ *en el Menu de Inicio de Sesion. Se envia por Gson.
+ */
 public class PaqueteUsuario extends Paquete implements Serializable, Cloneable {
 
 	private int idPj;
@@ -12,7 +16,10 @@ public class PaqueteUsuario extends Paquete implements Serializable, Cloneable {
 	public PaqueteUsuario(){
 
 	}
-
+/**
+ * La variable booleana inicioSesion comienza en false y es seteada en true cuando un usuario se 
+ * loguear al juego
+ */
 	public PaqueteUsuario(int pj, String user, String pw){
 		idPj = pj;
 		username = user;

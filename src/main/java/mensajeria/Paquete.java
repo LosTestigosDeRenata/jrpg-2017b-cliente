@@ -4,6 +4,11 @@ import java.io.Serializable;
 
 import javax.swing.JOptionPane;
 
+/**
+ * 
+ * Clase utiilzada para identificar a que paquete se hace referencia. 
+ *
+ */
 public class Paquete implements Serializable, Cloneable {
 
 	public static String msjExito = "1";

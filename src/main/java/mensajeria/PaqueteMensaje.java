@@ -2,6 +2,11 @@ package mensajeria;
 
 import java.io.Serializable;
 
+/**
+* clase serializable utilizada por el Chat. Se encarga de armar el paquete a enviar
+*Se carga el Id del user que desea enviar el mensaje, el Id de quien va a recibirlo
+*y el mensaje a enviar. Se envía por Gson.
+*/
 public class PaqueteMensaje extends Paquete implements Serializable, Cloneable {
 	
 		private String userEmisor;
