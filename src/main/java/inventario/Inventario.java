@@ -13,6 +13,9 @@ import javax.swing.border.MatteBorder;
 import dominio.Item;
 import mensajeria.PaquetePersonaje;
 
+/**
+ * Frame del inventario
+ */
 public class Inventario extends JPanel {
     private static final int CANTCOLUMNAS = 3;
     private static final int CANTFILAS = 3;

@@ -29,8 +29,7 @@ import mundo.Mundo;
 import recursos.Recursos;
 
 /**
- * Estado de juego, el personaje
- * no se encuentra batallando
+ * Estado de juego, el personaje no se encuentra batallando
  */
 public class EstadoJuego extends Estado {
 
@@ -183,7 +182,8 @@ public class EstadoJuego extends Estado {
 		    Pantalla.centerString(g,
 			    new Rectangle(
 				    (int) (actual.getPosX() - juego.getCamara().getxOffset() + X_OFFSET_CENTER_STRING),
-				    (int) (actual.getPosY() - juego.getCamara().getyOffset() - Y_OFFSET_CAMERA), 0, ALTO_GRAFICARPERSONAJES),
+				    (int) (actual.getPosY() - juego.getCamara().getyOffset() - Y_OFFSET_CAMERA), 0,
+				    ALTO_GRAFICARPERSONAJES),
 			    personajesConectados.get(actual.getIdPersonaje()).getNombre());
 		    g.drawImage(
 			    Recursos.getPersonaje().get(personajesConectados.get(actual.getIdPersonaje()).getRaza())

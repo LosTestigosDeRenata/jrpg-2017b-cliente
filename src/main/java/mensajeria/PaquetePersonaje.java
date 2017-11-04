@@ -149,10 +149,10 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
 
     /**
      * Setea el nombre
-     * @param nombre parametro nombre
+     * @param nombreParam parametro nombre
      */
-    public void setNombre(final String nombre) {
-	this.nombre = nombre;
+    public void setNombre(final String nombreParam) {
+	this.nombre = nombreParam;
     }
 
     /**
