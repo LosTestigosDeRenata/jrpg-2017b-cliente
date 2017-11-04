@@ -22,7 +22,7 @@ public class PaqueteDeNpcs extends Paquete implements Serializable, Cloneable {
 	 * Constructor parametrizado
 	 *
 	 * @param paquetesNpcs paquete Npcs
-	 * @param ubicacioNpcs ubicacion Npcs
+	 * @param ubicacionNpcs ubicacion Npcs
 	 */
 	public PaqueteDeNpcs(final Map<Integer, PaqueteNpc> paquetesNpcs,
 			final Map<Integer, PaqueteMovimiento> ubicacionNpcs) {

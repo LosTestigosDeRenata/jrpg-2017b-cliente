@@ -2,6 +2,9 @@ package comandos;
 
 import mensajeria.PaquetePersonaje;
 
+/**
+ *
+ */
 public class ActualizarInventario extends ComandosEscucha {
 
     @Override

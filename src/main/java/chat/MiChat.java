@@ -52,11 +52,11 @@ public class MiChat extends JFrame {
     private static final int ANCHO_BACK = 480;
     private static final int X_BACK = -20;
     private static final int BORDE = 5;
-    
+
     private JPanel contentPane;
     private JTextField texto;
     private JTextArea chat;
-    
+
     private final Gson gson = new Gson();
     private final JLabel background = new JLabel(new ImageIcon("recursos//background.jpg"));
 

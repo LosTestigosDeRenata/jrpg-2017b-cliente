@@ -17,6 +17,7 @@ import mundo.Tile;
  */
 public class Recursos {
 
+    private static final int _65 = 65;
     private static final int ANCHO = 256;
     private static final int ALTO = 256;
     private static final int TAM_FILAS_SOLIDEZ = 10;
@@ -30,8 +31,8 @@ public class Recursos {
     private static final int SPRITE_DER = 4;
     private static final int SPRITE_ARRIBA_DER = 3;
     private static final int SPRITE_ARRIBA = 2;
-    private static int ELEMENTOS = 65;
-    private static int aNCHOBARRA = 345;
+    private static int elementos = _65;
+    private static int anchobarra = 345;
     private static final int TAM_BUFFER_IMAGE = SPRITE_DER;
 
     private static int aNCHO; // Ancho del frame a obtener
@@ -481,7 +482,7 @@ public class Recursos {
      * @param menuCarga frame del menu de carga
      */
     private static void actualizarBarraDeCarga(final int elementosCargados, final MenuCarga menuCarga) {
-	menuCarga.setBarraCargando(elementosCargados * aNCHOBARRA / ELEMENTOS);
+	menuCarga.setBarraCargando(elementosCargados * anchobarra / elementos);
     }
 
     /**

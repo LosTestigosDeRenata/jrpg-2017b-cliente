@@ -2,7 +2,7 @@ package mensajeria;
 
 import java.io.Serializable;
 import java.util.HashMap;
-/** 
+/**
  * Se crea un paquete que contiene a quien estoy atacando y los nuevos estados de salud
  * y energia del persona y el enemigo. Se envia por Gson.
  * */

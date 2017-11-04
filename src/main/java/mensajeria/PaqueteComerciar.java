@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import dominio.Item;
 
 /**
- * 
- * Se crea un paquete que contiene con quien deseo comerciar, que voy a 
+ *
+ * Se crea un paquete que contiene con quien deseo comerciar, que voy a
  * entregar y que voy a recibir
  *
  */

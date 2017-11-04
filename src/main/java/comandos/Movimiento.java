@@ -9,7 +9,7 @@ public class Movimiento extends ComandosEscucha {
 
     @Override
     public void ejecutar() {
-	PaqueteDeMovimientos pdm = (PaqueteDeMovimientos) gson.fromJson(cadenaLeida, PaqueteDeMovimientos.class);
+	PaqueteDeMovimientos pdm = gson.fromJson(cadenaLeida, PaqueteDeMovimientos.class);
 	juego.setUbicacionPersonajes(pdm.getPersonajes());
 
     }

@@ -22,7 +22,7 @@ public class PaqueteUsuario extends Paquete implements Serializable, Cloneable {
 	}
 
 	/**
- * La variable booleana inicioSesion comienza en false y es seteada en true cuando un usuario se 
+ * La variable booleana inicioSesion comienza en false y es seteada en true cuando un usuario se
  * loguear al juego
 	 *
 	 * @param pj parametro pj

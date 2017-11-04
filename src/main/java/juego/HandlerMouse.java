@@ -9,10 +9,10 @@ import java.awt.event.MouseListener;
 public class HandlerMouse implements MouseListener {
 
     /** The pos mouse. */
-    private int posMouse[];
+    private int[] posMouse;
 
     /** The pos mouse recorrido. */
-    private int posMouseRecorrido[];
+    private int[] posMouseRecorrido;
 
     /** The nuevo recorrido. */
     private boolean nuevoRecorrido;

@@ -11,7 +11,7 @@ public class Batalla extends ComandosEscucha {
 
     @Override
     public void ejecutar() {
-	PaqueteBatalla paqueteBatalla = (PaqueteBatalla) gson.fromJson(cadenaLeida, PaqueteBatalla.class);
+	PaqueteBatalla paqueteBatalla = gson.fromJson(cadenaLeida, PaqueteBatalla.class);
 
 	if (paqueteBatalla.getIdEnemigo() > 0) {
 	    // Batalló contra otro personaje

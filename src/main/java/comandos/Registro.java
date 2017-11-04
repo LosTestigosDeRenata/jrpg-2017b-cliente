@@ -14,7 +14,7 @@ public class Registro extends ComandosCliente {
     public void ejecutar() {
 	synchronized (this) {
 
-	    Paquete paquete = (Paquete) gson.fromJson(cadenaLeida, Paquete.class);
+	    Paquete paquete = gson.fromJson(cadenaLeida, Paquete.class);
 	    if (paquete.getMensaje().equals(Paquete.msjExito)) {
 
 		// Abro el menu para la creaci�n del personaje
