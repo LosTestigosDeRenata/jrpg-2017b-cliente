@@ -5,9 +5,8 @@ import java.awt.Graphics;
 import juego.Juego;
 
 /**
- * Clase abstracta de Estado
- * Solo implementa el constructor
- * los demas metodos son solo la firma.
+ * Clase abstracta de Estado Solo implementa el constructor los demas metodos
+ * son solo la firma.
  */
 public abstract class Estado {
 
@@ -66,55 +65,55 @@ public abstract class Estado {
      * @return the estadoOffline
      */
     public static int getEstadoOffline() {
-        return estadoOffline;
+	return estadoOffline;
     }
 
     /**
      * @param estadoOffline the estadoOffline to set
      */
     public static void setEstadoOffline(final int estadoOffline) {
-        Estado.estadoOffline = estadoOffline;
+	Estado.estadoOffline = estadoOffline;
     }
 
     /**
      * @return the estadoJuego
      */
     public static int getEstadoJuego() {
-        return estadoJuego;
+	return estadoJuego;
     }
 
     /**
      * @param estadoJuego the estadoJuego to set
      */
     public static void setEstadoJuego(final int estadoJuego) {
-        Estado.estadoJuego = estadoJuego;
+	Estado.estadoJuego = estadoJuego;
     }
 
     /**
      * @return the estadoBatalla
      */
     public static int getEstadoBatalla() {
-        return estadoBatalla;
+	return estadoBatalla;
     }
 
     /**
      * @param estadoBatalla the estadoBatalla to set
      */
     public static void setEstadoBatalla(final int estadoBatalla) {
-        Estado.estadoBatalla = estadoBatalla;
+	Estado.estadoBatalla = estadoBatalla;
     }
 
     /**
      * @return the estadoBatallaNpc
      */
     public static int getEstadoBatallaNpc() {
-        return estadoBatallaNpc;
+	return estadoBatallaNpc;
     }
 
     /**
      * @param estadoBatallaNpc the estadoBatallaNpc to set
      */
     public static void setEstadoBatallaNpc(final int estadoBatallaNpc) {
-        Estado.estadoBatallaNpc = estadoBatallaNpc;
+	Estado.estadoBatallaNpc = estadoBatallaNpc;
     }
 }

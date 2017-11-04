@@ -1,5 +1,8 @@
 package mundo;
 
+/**
+ * Nodos de los grafos
+ */
 public class Nodo {
 
     private static final int CANT_NODOS = 8;
