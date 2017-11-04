@@ -4,7 +4,10 @@ import javax.swing.JOptionPane;
 
 import frames.MenuCreacionPj;
 import mensajeria.Paquete;
-
+/**
+ * Comando para registrar usuario
+ *
+ */
 public class Registro extends ComandosCliente {
 
     @Override

@@ -60,6 +60,7 @@ public class EstadoJuego extends Estado {
     private static final int VEL_ANIMACION = 150;
     private static final int Y_ENTIDAD = 64;
     private static final int X_ENTIDAD = 64;
+    private static final int ALTO_GRAFICARPERSONAJES = 10;
     private Entidad entidadPersonaje;
     private PaquetePersonaje paquetePersonaje;
     private Mundo mundo;
@@ -182,7 +183,7 @@ public class EstadoJuego extends Estado {
 		    Pantalla.centerString(g,
 			    new Rectangle(
 				    (int) (actual.getPosX() - juego.getCamara().getxOffset() + X_OFFSET_CENTER_STRING),
-				    (int) (actual.getPosY() - juego.getCamara().getyOffset() - Y_OFFSET_CAMERA), 0, 10),
+				    (int) (actual.getPosY() - juego.getCamara().getyOffset() - Y_OFFSET_CAMERA), 0, ALTO_GRAFICARPERSONAJES),
 			    personajesConectados.get(actual.getIdPersonaje()).getNombre());
 		    g.drawImage(
 			    Recursos.getPersonaje().get(personajesConectados.get(actual.getIdPersonaje()).getRaza())

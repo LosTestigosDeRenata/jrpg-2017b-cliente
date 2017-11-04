@@ -48,6 +48,7 @@ public class MenuInicioSesion extends JFrame {
     private static final int Y_LB_INGRESAR = 183;
     private static final int X_LB_INGRESAR = 193;
     private static final int TAM_TXT = 15;
+    private static final int TAM_TXT_PASSWORD = 11;
     private static final int ALTO_TF = 20;
     private static final int ANCHO_TF = 118;
     private static final int Y_TF = 69;
@@ -139,7 +140,7 @@ public class MenuInicioSesion extends JFrame {
 	});
 	passwordField.setBounds(X_PASS, Y_PASS, ANCHO_PASS, ALTO_PASS);
 	layeredPane.add(passwordField, new Integer(1));
-	passwordField.setFont(new Font("Tahoma", Font.PLAIN, 11));
+	passwordField.setFont(new Font("Tahoma", Font.PLAIN, TAM_TXT_PASSWORD));
 
 	JButton btnConectar = new JButton("");
 	btnConectar.setBounds(X_BTN_CONECTAR, Y_BTN_CONECTAR, ANCHO_BTN_CONECTAR, ALTO_BTN_CONECTAR);

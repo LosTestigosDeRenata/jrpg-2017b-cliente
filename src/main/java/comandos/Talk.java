@@ -4,7 +4,10 @@ import chat.MiChat;
 import chat.VentanaContactos;
 import juego.Pantalla;
 import mensajeria.PaqueteMensaje;
-
+/**
+ * Comando para enviar mensaje a usuario
+ *
+ */
 public class Talk extends ComandosEscucha {
 
     @Override

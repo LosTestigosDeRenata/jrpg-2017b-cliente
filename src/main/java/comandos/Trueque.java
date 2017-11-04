@@ -12,7 +12,10 @@ import dominio.Personaje;
 import mensajeria.Comando;
 import mensajeria.PaqueteComerciar;
 import mensajeria.PaquetePersonaje;
-
+/**
+ * Comando para realizar un trueque con un usuario
+ *
+ */
 public class Trueque extends ComandosEscucha {
 
     @Override

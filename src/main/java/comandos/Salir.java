@@ -6,7 +6,10 @@ import javax.swing.JOptionPane;
 
 import mensajeria.Comando;
 import mensajeria.Paquete;
-
+/**
+ * Comando para salir del juego
+ *
+ */
 public class Salir extends ComandosCliente {
 
     @Override

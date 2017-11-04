@@ -4,7 +4,10 @@ import javax.swing.JOptionPane;
 
 import mensajeria.Paquete;
 import mensajeria.PaquetePersonaje;
-
+/**
+ * Comando para iniciar sesion
+ *
+ */
 public class InicioSesion extends ComandosCliente {
 
     @Override

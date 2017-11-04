@@ -2,7 +2,10 @@ package comandos;
 
 import estados.Estado;
 import mensajeria.PaqueteFinalizarBatalla;
-
+/**
+ * Comando utilizado para finalizar la batalla entre usuario y npc o entre usuario y otro usuario
+ *
+ */
 public class FinalizarBatalla extends ComandosEscucha {
 
     @Override

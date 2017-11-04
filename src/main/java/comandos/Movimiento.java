@@ -1,7 +1,10 @@
 package comandos;
 
 import mensajeria.PaqueteDeMovimientos;
-
+/**
+ * Comando para mover al usuario
+ *
+ */
 public class Movimiento extends ComandosEscucha {
 
     @Override

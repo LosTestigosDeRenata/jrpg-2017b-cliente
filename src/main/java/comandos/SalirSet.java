@@ -1,7 +1,10 @@
 package comandos;
 
 import mensajeria.Comando;
-
+/**
+ * Comando para setear el comando salir
+ *
+ */
 public class SalirSet extends ComandosCliente {
 
     @Override
