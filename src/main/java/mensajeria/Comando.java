@@ -3,7 +3,9 @@ package mensajeria;
 import com.google.gson.Gson;
 
 /**
- * Clase Comando
+
+ * Clase abstracta que contiene variables estaticas que representan los comando disponibles
+ * Utilizada para crear el paquete que se envia por Gson
  */
 public abstract class Comando {
 	// Nombre del paquete donde se encuentran las clases con las

@@ -2,10 +2,10 @@ package mensajeria;
 
 import java.io.Serializable;
 import java.util.HashMap;
-
-/**
- * Clase PaqueteAtacar
- */
+/** 
+ * Se crea un paquete que contiene a quien estoy atacando y los nuevos estados de salud
+ * y energia del persona y el enemigo. Se envia por Gson.
+ * */
 public class PaqueteAtacar extends Paquete implements Serializable, Cloneable {
 
 	private int id;

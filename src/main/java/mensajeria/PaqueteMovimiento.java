@@ -3,8 +3,9 @@ package mensajeria;
 import java.io.Serializable;
 
 /**
- * Clase PaqueteMovimiento
- */
+ * Se encarga de armar el paquete que contiene la ubicacion del persona en el mapa.
+ * Utilizada por la clase Juego para setear la ubicacion inicial del personaje. Se envia por Gson.
+*/
 public class PaqueteMovimiento extends Paquete implements Serializable, Cloneable {
 
 	private int id;

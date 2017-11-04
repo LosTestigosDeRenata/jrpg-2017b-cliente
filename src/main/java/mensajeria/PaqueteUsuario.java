@@ -3,7 +3,8 @@ package mensajeria;
 import java.io.Serializable;
 
 /**
- * Clase PaqueteUsuario
+ * Crea un paquete con el nombre de usuario y su clave para ser enviada al server. Se utiliza
+ *en el Menu de Inicio de Sesion. Se envia por Gson.
  */
 public class PaqueteUsuario extends Paquete implements Serializable, Cloneable {
 
@@ -11,6 +12,7 @@ public class PaqueteUsuario extends Paquete implements Serializable, Cloneable {
 	private String username;
 	private String password;
 	private boolean inicioSesion;
+
 
 	/**
 	 * Constructor
@@ -20,7 +22,8 @@ public class PaqueteUsuario extends Paquete implements Serializable, Cloneable {
 	}
 
 	/**
-	 * Constructor parametrizado
+ * La variable booleana inicioSesion comienza en false y es seteada en true cuando un usuario se 
+ * loguear al juego
 	 *
 	 * @param pj parametro pj
 	 * @param user parametro user
@@ -33,6 +36,7 @@ public class PaqueteUsuario extends Paquete implements Serializable, Cloneable {
 		inicioSesion = false;
 	}
 
+
 	/**
 	 * Retorna el id
 	 *
@@ -41,6 +45,7 @@ public class PaqueteUsuario extends Paquete implements Serializable, Cloneable {
 	public int getIdPj() {
 		return idPj;
 	}
+
 
 	/**
 	 * Setea el id
@@ -60,6 +65,7 @@ public class PaqueteUsuario extends Paquete implements Serializable, Cloneable {
 		return username;
 	}
 
+
 	/**
 	 * Setea el nombre de usuario
 	 *
@@ -74,9 +80,11 @@ public class PaqueteUsuario extends Paquete implements Serializable, Cloneable {
 	 *
 	 * @return password retorna el password
 	 */
+
 	public String getPassword() {
 		return password;
 	}
+
 
 	/**
 	 * Setea el password
@@ -92,9 +100,11 @@ public class PaqueteUsuario extends Paquete implements Serializable, Cloneable {
 	 *
 	 * @return inicioSesion retorna el inicio de sesion
 	 */
+
 	public boolean isInicioSesion() {
 		return inicioSesion;
 	}
+
 
 	/**
 	 * Setea el inicio de la sesion

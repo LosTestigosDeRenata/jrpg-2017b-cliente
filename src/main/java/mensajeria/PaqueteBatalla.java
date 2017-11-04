@@ -3,7 +3,8 @@ package mensajeria;
 import java.io.Serializable;
 
 /**
- * Clase PaqueteBatalla
+ * Se crea el paquete que contiene contra quien voy a Batallar y si es o no mi turno
+ * Utilizado en EstadoBatalla para lo mencionado anterioremente.
  */
 public class PaqueteBatalla extends Paquete implements Serializable, Cloneable {
 

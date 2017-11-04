@@ -6,9 +6,12 @@ import java.util.ArrayList;
 import dominio.Item;
 
 /**
- * Clase PaqueteComerciar
+ * 
+ * Se crea un paquete que contiene con quien deseo comerciar, que voy a 
+ * entregar y que voy a recibir
+ *
  */
-public class PaqueteComerciar extends Paquete implements Serializable, Cloneable {
+public class PaqueteComerciar extends Paquete implements Serializable, Cloneable  {
 
 	private int id;
 	private int idEnemigo;
@@ -16,6 +19,7 @@ public class PaqueteComerciar extends Paquete implements Serializable, Cloneable
 	private ArrayList<Item> itemsADar = new ArrayList<Item>();
 	private ArrayList<Item> itemsAObtener = new ArrayList<Item>();
 	private boolean solicitudDeComercio;
+
 
 	/**
 	 * Constructor
@@ -33,6 +37,7 @@ public class PaqueteComerciar extends Paquete implements Serializable, Cloneable
 	public boolean isSolicitudDeComercio() {
 		return solicitudDeComercio;
 	}
+
 
 	/**
 	 * Setea la solicitud de comercio
@@ -52,6 +57,7 @@ public class PaqueteComerciar extends Paquete implements Serializable, Cloneable
 		return itemsADar;
 	}
 
+
 	/**
 	 * Setea los items a dar
 	 *
@@ -69,6 +75,8 @@ public class PaqueteComerciar extends Paquete implements Serializable, Cloneable
 	public int getId() {
 		return id;
 	}
+
+
 
 	/**
 	 * Setea el id
@@ -88,6 +96,7 @@ public class PaqueteComerciar extends Paquete implements Serializable, Cloneable
 		return idEnemigo;
 	}
 
+
 	/**
 	 * Setea el id enemigo
 	 *
@@ -105,6 +114,7 @@ public class PaqueteComerciar extends Paquete implements Serializable, Cloneable
 	public int getListo() {
 		return listo;
 	}
+
 
 	/**
 	 * Aumenta la variable listo

@@ -11,7 +11,8 @@ import dominio.Item;
 import estados.Estado;
 
 /**
- * Clase PaquetePersonaje
+ * Clase para setear las caracteristicas del personaje. Se envia por Gson. Incluye un ArrayList
+ * de Items que son actualizables desde el server a travez de consultas a la base de datos
  */
 public class PaquetePersonaje extends Paquete implements Serializable, Cloneable {
 
@@ -29,6 +30,7 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
 	private int nivel = 1;
 	private int experiencia;
 	private int puntosSkill = 0;
+
 	private ArrayList<Item> items = new ArrayList<Item>();
 
 	/**
@@ -45,6 +47,7 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
 	 *
 	 * @return estado
 	 */
+
 	public int getEstado() {
 		return estado;
 	}

@@ -3,6 +3,7 @@ package mensajeria;
 import java.io.Serializable;
 import java.util.Map;
 
+
 /**
  * Clase PaqueteDeMovimientos
  */

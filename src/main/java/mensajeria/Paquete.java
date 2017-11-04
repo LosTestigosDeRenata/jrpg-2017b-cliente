@@ -5,8 +5,8 @@ import java.io.Serializable;
 import javax.swing.JOptionPane;
 
 /**
- *
- * Clase utiilzada para identificar a que paquete se hace referencia.
+ * 
+ * Clase utiilzada para identificar a que paquete se hace referencia. 
  *
  */
 public class Paquete implements Serializable, Cloneable {
