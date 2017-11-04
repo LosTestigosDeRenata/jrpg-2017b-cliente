@@ -17,6 +17,8 @@ import mundo.Tile;
  */
 public class Recursos {
 
+    private static final int ANCHO = 256;
+    private static final int ALTO = 256;
     private static final int TAM_FILAS_SOLIDEZ = 10;
     private static final int TAM_COLUMNAS_SOLIDEZ = 8;
     private static final int ALTO_TILE = 64;
@@ -28,7 +30,7 @@ public class Recursos {
     private static final int SPRITE_DER = 4;
     private static final int SPRITE_ARRIBA_DER = 3;
     private static final int SPRITE_ARRIBA = 2;
-    private static int eLEMENTOS = 65;
+    private static int ELEMENTOS = 65;
     private static int aNCHOBARRA = 345;
     private static final int TAM_BUFFER_IMAGE = SPRITE_DER;
 
@@ -106,15 +108,14 @@ public class Recursos {
     /**
      * Carga de recursos
      * @param menuCarga ventana del Menu de carga
-     * @throws NumberFormatException Exception por el formato de numero
      * @throws IOException del cargar imagen
      */
     public static void cargar(final MenuCarga menuCarga) throws IOException {
 
 	int elementosCargados = 0;
 
-	aNCHO = 256;
-	aLTO = 256;
+	aNCHO = ANCHO;
+	aLTO = ALTO;
 
 	noItem = ImageIO.read(new File("recursos//noItem.png"));
 	mochila = ImageIO.read(new File("recursos//mochila.png"));
@@ -369,7 +370,7 @@ public class Recursos {
 	if (MenuMapas.getNumberMap() == 1) {
 	    SpriteSheet mapaAubenor = new SpriteSheet(CargadorImagen.cargarImagen("/Aubenor.png"));
 	    Tile.setAubenor(new Tile[TAM_SOLIDEZ_MAPA]);
-	    boolean[][] solidezAubenor = { {true, true, false, true, false, true, true, true, true, true },
+	    boolean[][] solidezAubenor = {{true, true, false, true, false, true, true, true, true, true },
 		    {true, true, true, true, true, true, true, true, true, true },
 		    {true, true, true, true, true, true, true, true, true, true },
 		    {true, false, false, false, false, false, false, false, true, true },
@@ -381,13 +382,13 @@ public class Recursos {
 		for (int x = 0; x < TAM_FILAS_SOLIDEZ; x++) {
 		    Tile.getAubenor()[y * TAM_FILAS_SOLIDEZ + x + 1] = new Tile(
 			    mapaAubenor.getTile(x * ANCHO_TILE, y * ALTO_TILE, ANCHO_TILE, ALTO_TILE),
-			    y * TAM_FILAS_SOLIDEZ + x + 1, solidezAubenor[y][x], ANCHO_TILE, 64);
+			    y * TAM_FILAS_SOLIDEZ + x + 1, solidezAubenor[y][x], ANCHO_TILE, ALTO_TILE);
 		}
 	    }
 	} else {
 	    SpriteSheet mapaAris = new SpriteSheet(CargadorImagen.cargarImagen("/Aris.png"));
 	    Tile.setAris(new Tile[TAM_SOLIDEZ_MAPA]);
-	    boolean[][] solidezAris = { {true, false, false, false, false, false, false, true, true, true },
+	    boolean[][] solidezAris = {{true, false, false, false, false, false, false, true, true, true },
 		    {false, false, false, false, false, false, false, false, true, true },
 		    {false, false, false, false, true, true, true, true, true, true },
 		    {true, true, true, true, true, true, true, true, true, true },
@@ -476,11 +477,11 @@ public class Recursos {
 
     /**
      * Actualiza la barra de carga
-     * @param elementosCargados
-     * @param menuCarga
+     * @param elementosCargados cant de elementos cargardos
+     * @param menuCarga frame del menu de carga
      */
     private static void actualizarBarraDeCarga(final int elementosCargados, final MenuCarga menuCarga) {
-	menuCarga.setBarraCargando(elementosCargados * aNCHOBARRA / eLEMENTOS);
+	menuCarga.setBarraCargando(elementosCargados * aNCHOBARRA / ELEMENTOS);
     }
 
     /**

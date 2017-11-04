@@ -9,40 +9,75 @@ import java.io.Serializable;
 */
 public class PaqueteMensaje extends Paquete implements Serializable, Cloneable {
 
-    private String userEmisor;
-    private String userReceptor;
-    private String msj;
+	private String userEmisor;
+	private String userReceptor;
+	private String msj;
 
-    public PaqueteMensaje() {
-    }
+	/**
+	 * Constructor de la clase
+	 */
+	public PaqueteMensaje() {
+	}
 
-    public String getMensaje() {
-	return msj;
-    }
+	/**
+	 * Retorna el mensaje
+	 *
+	 * @return msj
+	 */
+	@Override
+	public String getMensaje() {
+		return msj;
+	}
 
-    public void setMensaje(String mensaje) {
-	this.msj = mensaje;
-    }
+	/**
+	 * Asigna mensaje
+	 *
+	 * @param mensaje a asignar
+	 */
+	@Override
+	public void setMensaje(final String mensaje) {
+		this.msj = mensaje;
+	}
 
-    public String getUserEmisor() {
-	return userEmisor;
-    }
+	/**
+	 * Retorna el usuario emisor
+	 *
+	 * @return userEmisor
+	 */
+	public String getUserEmisor() {
+		return userEmisor;
+	}
 
-    public void setUserEmisor(String idEmisor) {
-	this.userEmisor = idEmisor;
-    }
+	/**
+	 * Setea el usuario emisor con el id
+	 * @param idEmisor id del emisor del mensaje
+	 */
+	public void setUserEmisor(final String idEmisor) {
+		this.userEmisor = idEmisor;
+	}
 
-    public String getUserReceptor() {
-	return userReceptor;
-    }
+	/**
+	 * Retorna el usuario receptor
+	 *
+	 * @return userreceptor
+	 */
+	public String getUserReceptor() {
+		return userReceptor;
+	}
 
-    public void setUserReceptor(String idReceptor) {
-	this.userReceptor = idReceptor;
-    }
+	/**
+	 * Setea el usuario receptor
+	 *
+	 * @param idReceptor id del usuario receptor
+	 */
+	public void setUserReceptor(final String idReceptor) {
+		this.userReceptor = idReceptor;
+	}
 
-    public Object clone() {
-	Object obj = null;
-	obj = super.clone();
-	return obj;
-    }
+	@Override
+	public Object clone() {
+		Object obj = null;
+		obj = super.clone();
+		return obj;
+	}
 }
