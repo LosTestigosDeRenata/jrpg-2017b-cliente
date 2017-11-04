@@ -1,6 +1,9 @@
 package comandos;
 
 import mensajeria.PaquetePersonaje;
+/**
+ * Comando para actualizar al personaje
+ */
 
 public class ActualizarPersonaje extends ComandosEscucha {
 

@@ -2,7 +2,9 @@ package comandos;
 
 import cliente.Cliente;
 import mensajeria.Comando;
-
+/**
+ * Clase abstracta ComandoCliente
+ */
 public abstract class ComandosCliente extends Comando {
     protected Cliente cliente;
 

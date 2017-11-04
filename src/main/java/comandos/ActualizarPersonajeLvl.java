@@ -1,7 +1,9 @@
 package comandos;
 
 import mensajeria.PaquetePersonaje;
-
+/**
+ * Comando para actualizar el nivel del personaje
+ */
 public class ActualizarPersonajeLvl extends ComandosEscucha {
 
     @Override

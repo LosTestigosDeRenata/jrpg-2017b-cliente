@@ -2,7 +2,9 @@ package comandos;
 
 import juego.Juego;
 import mensajeria.Comando;
-
+/**
+ * Clase abstracta ComandosEscucha
+ */
 public abstract class ComandosEscucha extends Comando {
     protected Juego juego;
 

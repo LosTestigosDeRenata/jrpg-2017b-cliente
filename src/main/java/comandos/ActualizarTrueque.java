@@ -1,7 +1,9 @@
 package comandos;
 
 import mensajeria.PaquetePersonaje;
-
+/**
+ * Comando para actualizar el trueque entre personajes
+ */
 public class ActualizarTrueque extends ComandosEscucha {
 
     @Override

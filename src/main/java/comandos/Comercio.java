@@ -7,7 +7,9 @@ import javax.swing.JOptionPane;
 import frames.MenuComerciar;
 import mensajeria.Paquete;
 import mensajeria.PaqueteComerciar;
-
+/**
+ * Clase comercio
+ */
 public class Comercio extends ComandosEscucha {
 
     @Override

@@ -3,7 +3,9 @@ package comandos;
 import javax.swing.JOptionPane;
 
 import mensajeria.PaquetePersonaje;
-
+/**
+ * Clase crear personaje
+ */
 public class CrearPersonaje extends ComandosCliente {
 
     @Override
