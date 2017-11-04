@@ -2,16 +2,16 @@ package comandos;
 
 import estados.Estado;
 import mensajeria.PaqueteFinalizarBatalla;
+
 /**
- * Comando utilizado para finalizar la batalla entre usuario y npc o entre usuario y otro usuario
- *
+ * Comando utilizado para finalizar la batalla entre usuario y npc o entre
+ * usuario y otro usuario
  */
 public class FinalizarBatalla extends ComandosEscucha {
 
     @Override
     public void ejecutar() {
-	PaqueteFinalizarBatalla paqueteFinalizarBatalla = gson.fromJson(cadenaLeida,
-		PaqueteFinalizarBatalla.class);
+	PaqueteFinalizarBatalla paqueteFinalizarBatalla = gson.fromJson(cadenaLeida, PaqueteFinalizarBatalla.class);
 
 	// Batalló contra un npc
 	System.out.println("Recibio finalizar: " + paqueteFinalizarBatalla.getIdEnemigo());
@@ -20,7 +20,8 @@ public class FinalizarBatalla extends ComandosEscucha {
 	    if (paqueteFinalizarBatalla.getGanadorBatalla() != paqueteFinalizarBatalla.getIdEnemigo() * -1) {
 		juego.getNpcManager().despawnNpc(paqueteFinalizarBatalla.getIdEnemigo() * -1);
 	    } else {
-		juego.getPaquetesNpcs().get(paqueteFinalizarBatalla.getIdEnemigo() * -1).setEstado(Estado.getEstadoJuego());
+		juego.getPaquetesNpcs().get(paqueteFinalizarBatalla.getIdEnemigo() * -1)
+			.setEstado(Estado.getEstadoJuego());
 	    }
 
 	} else {

@@ -36,8 +36,8 @@ public class TestCliente {
 	// Paquete tipo "Paquete", el test de PjTest me de bien..
 	public void testServer(final Queue<Paquete> cantPaquetes) {
 		myThread = new Thread(new Runnable(){
-		
-	
+
+
 			@Override
 			public void run() {
 				try {
@@ -49,14 +49,14 @@ public class TestCliente {
 						//Lo recibo pero no importa
 						entrada.readObject();
 						Paquete paq = cantPaquetes.poll();
-						//Dado que lo que me restringe de crear a un usuario es que ya exista 
+						//Dado que lo que me restringe de crear a un usuario es que ya exista
 						// y acá no tengo db..
 						if (paq.getMensaje() != "0") {
 							paq.setMensaje("1");
 						}
 						salida.writeObject(gson.toJson(paq));
-						
-						
+
+
 					}
 					cliente.close();
 				} catch (IOException | ClassNotFoundException e) {
@@ -80,7 +80,7 @@ public class TestCliente {
 	@Test
 	public void testConexionConElServidor() {
 		Queue<Paquete> queue = new LinkedList<Paquete>();
-		
+
 		queue.add(new Paquete());
 		testServer(queue);
 		Cliente cliente = new Cliente("localhost",55050);
@@ -103,12 +103,12 @@ public class TestCliente {
 			JOptionPane.showMessageDialog(null, "Falló");
 		}
 	}
-	
 
-	
+
+
 	@Test
 	public void testRegistro() {
-		
+
 		Queue<Paquete> queue = new LinkedList<Paquete>();
 		// Registro el usuario
 		PaqueteUsuario pu = new PaqueteUsuario();
@@ -127,7 +127,7 @@ public class TestCliente {
 			cliente.getSalida().writeObject(gson.toJson(pu));
 
 			// Recibo la respuesta del servidor
-			Paquete resultado = (Paquete) gson.fromJson((String) cliente.getEntrada().readObject(), Paquete.class);
+			Paquete resultado = gson.fromJson((String) cliente.getEntrada().readObject(), Paquete.class);
 
 			// Cierro las conexiones
 			Paquete p = new Paquete();
@@ -145,11 +145,11 @@ public class TestCliente {
 		}
 	}
 
-	
+
 	@Test
 
 	public void testRegistroFallido() {
-		
+
 		Queue<Paquete> queue = new LinkedList<Paquete>();
 
 		// Registro el usuario
@@ -168,7 +168,7 @@ public class TestCliente {
 			// Envio el paquete para registrarme
 			cliente.getSalida().writeObject(gson.toJson(pu));
 			// Recibo la respuesta del servidor
-			Paquete resultado = (Paquete) gson.fromJson((String) cliente.getEntrada().readObject(), Paquete.class);
+			Paquete resultado = gson.fromJson((String) cliente.getEntrada().readObject(), Paquete.class);
 
 			// Cierro las conexiones
 			Paquete p = new Paquete();
@@ -220,13 +220,13 @@ public class TestCliente {
 			cliente.getSalida().writeObject(gson.toJson(pu));
 
 			// Recibo la respuesta del servidor
-			Paquete paquete = (Paquete) gson.fromJson((String) cliente.getEntrada().readObject(), Paquete.class);
+			Paquete paquete = gson.fromJson((String) cliente.getEntrada().readObject(), Paquete.class);
 
 			// Envio el paquete de registro de personaje
 			cliente.getSalida().writeObject(gson.toJson(pp));
 
 			// Recibo el personaje de mi usuario
-			pp = (PaquetePersonaje) gson.fromJson((String) cliente.getEntrada().readObject(), PaquetePersonaje.class);
+			pp = gson.fromJson((String) cliente.getEntrada().readObject(), PaquetePersonaje.class);
 
 			// Cierro las conexiones
 			Paquete p = new Paquete();
@@ -257,8 +257,8 @@ public class TestCliente {
 		pu.setUsername("nuevoUser");
 		pu.setPassword("test");
 		queue.add(pp);
-		
-		
+
+
 		testServer(queue);
 		Cliente cliente = new Cliente("localhost",55050);
 
@@ -268,7 +268,7 @@ public class TestCliente {
 			cliente.getSalida().writeObject(gson.toJson(pu));
 
 			// Recibo el paquete con el personaje
-			PaquetePersonaje paquetePersonaje = (PaquetePersonaje) gson
+			PaquetePersonaje paquetePersonaje = gson
 					.fromJson((String) cliente.getEntrada().readObject(), PaquetePersonaje.class);
 
 			// Cierro las conexiones
@@ -289,7 +289,7 @@ public class TestCliente {
 
 	@Test
 	public void testActualizarPersonaje() throws IOException {
-		
+
 		Queue<Paquete> queue = new LinkedList<Paquete>();
 
 		PaquetePersonaje pp = new PaquetePersonaje();
@@ -313,7 +313,7 @@ public class TestCliente {
 			cliente.getSalida().writeObject(gson.toJson(pp));
 
 			// Recibo el paquete con el personaje actualizado
-			PaquetePersonaje paquetePersonaje = (PaquetePersonaje) gson
+			PaquetePersonaje paquetePersonaje = gson
 					.fromJson((String) cliente.getEntrada().readObject(), PaquetePersonaje.class);
 
 			// Cierro las conexiones

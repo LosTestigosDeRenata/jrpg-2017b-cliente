@@ -385,8 +385,8 @@ public class Entidad {
 
 			if (actual != null && actual.getIdPersonaje() != juego.getPersonaje().getId()
 				&& juego.getPersonajesConectados().get(actual.getIdPersonaje()) != null
-				&& juego.getPersonajesConectados().get(actual.getIdPersonaje())
-					.getEstado() == Estado.getEstadoJuego()) {
+				&& juego.getPersonajesConectados().get(actual.getIdPersonaje()).getEstado() == Estado
+					.getEstadoJuego()) {
 
 			    if (tileMovermeLocal[0] == tilePersonajes[0] && tileMovermeLocal[1] == tilePersonajes[1]) {
 				idEnemigo = actual.getIdPersonaje();
@@ -434,8 +434,9 @@ public class Entidad {
 			tileNpc = Mundo.mouseATile(actual.getX(), actual.getY());
 
 			if (actual != null) {
-			    if (tileMovermeLocal[0] == tileNpc[0] && tileMovermeLocal[1] == tileNpc[1] && juego.getPaquetesNpcs()
-				    .get(actual.getIdEnemigo()).getEstado() == Estado.getEstadoJuego()) {
+			    if (tileMovermeLocal[0] == tileNpc[0] && tileMovermeLocal[1] == tileNpc[1]
+				    && juego.getPaquetesNpcs().get(actual.getIdEnemigo()).getEstado() == Estado
+					    .getEstadoJuego()) {
 				juego.getEstadoJuego().setHaySolicitud(true,
 					juego.getPaquetesNpcs().get(actual.getIdEnemigo()),
 					MenuInfoPersonaje.MENUBATALLAR);
