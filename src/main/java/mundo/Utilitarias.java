@@ -5,7 +5,9 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import javax.swing.JOptionPane;
-
+/**
+ * Clase Utilitarias
+ */
 public class Utilitarias {
 
     /**

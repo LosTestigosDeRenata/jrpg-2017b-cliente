@@ -10,7 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import cliente.*;
+import cliente.Cliente;
 import mensajeria.Comando;
 
 import javax.swing.ImageIcon;

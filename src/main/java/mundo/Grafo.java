@@ -1,5 +1,7 @@
 package mundo;
-
+/**
+ * Clase Grafo
+ */
 public class Grafo {
 
     private int cantidadDeNodos;

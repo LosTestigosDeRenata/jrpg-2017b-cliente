@@ -16,7 +16,9 @@ import javax.swing.JPanel;
 import dominio.Item;
 import mensajeria.PaquetePersonaje;
 import recursos.Recursos;
-
+/**
+ * Clase Celda
+ */
 public class Celda extends JPanel {
 
     private static final int DIMENSION = 60;

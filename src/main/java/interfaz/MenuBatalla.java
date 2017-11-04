@@ -8,7 +8,9 @@ import java.awt.Rectangle;
 import dominio.Personaje;
 import juego.Pantalla;
 import recursos.Recursos;
-
+/**
+ * Clase MenuBatalla
+ */
 public class MenuBatalla {
 
     private static final int ALTO_IMAGEN = 20;

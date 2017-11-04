@@ -13,7 +13,7 @@ public class SpriteSheet {
 
     /**
      * Contructor por parametro de la clase
-     * @param sprite
+     * @param sprite sprite
      */
     public SpriteSheet(final BufferedImage sprite) {
 	this.sprite = sprite;

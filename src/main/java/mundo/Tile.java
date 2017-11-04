@@ -2,7 +2,9 @@ package mundo;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
-
+/**
+ * Clase Tile
+ */
 public class Tile {
     private static final int TAM_TILES = 256;
     private static Tile[] tiles = new Tile[TAM_TILES];
