@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.swing.JOptionPane;
 
+import comandos.Nada;
+
 /**
  * Clase utiilzada para identificar a que paquete se hace referencia.
  */
@@ -116,7 +118,7 @@ public class Paquete implements Serializable, Cloneable {
     /**
      * devuelve un objeto Comando
      * @param nombrePaquete **nombre del paquete**
-     * @return c
+     * @return el comando del objeto, devuelve un comando vacío en caso de error
      */
     public Comando getObjeto(final String nombrePaquete) {
 	try {
@@ -124,7 +126,7 @@ public class Paquete implements Serializable, Cloneable {
 	    c = (Comando) Class.forName(nombrePaquete + "." + Comando.CLASSNAMES[comando]).newInstance();
 	    return c;
 	} catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
-	    return null;
+	    return new Nada();
 	}
 
     }
@@ -133,7 +135,7 @@ public class Paquete implements Serializable, Cloneable {
      * devuelve un objeto Comando
      * @param nombrePaquete **nombre del paquete**
      * @param accion **comando a realizar**
-     * @return c
+     * @return el comando del objeto, devuelve un comando vacío en caso de error
      */
     public static Comando getObjetoSet(final String nombrePaquete, final int accion) {
 	try {
@@ -141,7 +143,7 @@ public class Paquete implements Serializable, Cloneable {
 	    c = (Comando) Class.forName(nombrePaquete + "." + Comando.CLASSNAMESBIS[accion]).newInstance();
 	    return c;
 	} catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
-	    return null;
+	    return new Nada();
 	}
 
     }
