@@ -7,6 +7,10 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -15,14 +19,21 @@ import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import com.sun.media.jfxmedia.events.PlayerEvent;
+
 import cliente.Cliente;
+import sun.audio.AudioPlayer;
+import sun.audio.AudioStream;
+
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
- * Menu de inicio
- * Arranca la ejecucion del cliente
- * por este frame
+ * Menu de inicio Arranca la ejecucion del cliente por este frame
  */
 public class MenuInicio extends JFrame {
 
@@ -72,6 +83,7 @@ public class MenuInicio extends JFrame {
 		}
 	    }
 	});
+
 	setIconImage(Toolkit.getDefaultToolkit().getImage("src/main/java/frames/IconoWome.png"));
 	setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
 		new ImageIcon(MenuJugar.class.getResource("/cursor.png")).getImage(), new Point(0, 0),

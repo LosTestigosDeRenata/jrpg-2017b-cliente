@@ -3,7 +3,9 @@ package estados;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 
 import javax.swing.JOptionPane;
@@ -29,10 +31,11 @@ import mensajeria.PaqueteFinalizarBatalla;
 import mensajeria.PaquetePersonaje;
 import mundo.Mundo;
 import recursos.Recursos;
+import sun.audio.AudioPlayer;
+import sun.audio.AudioStream;
 
 /**
- * Estado de batalla
- * Puede ser contra otro cliente
+ * Estado de batalla Puede ser contra otro cliente
  */
 public class EstadoBatalla extends Estado {
 
@@ -171,6 +174,16 @@ public class EstadoBatalla extends Estado {
 		    if (!enemigo.estaVivo()) {
 			juego.getEstadoJuego().setHaySolicitud(true, juego.getPersonaje(),
 				MenuInfoPersonaje.MENUGANARBATALLA);
+
+			InputStream in;
+			try {
+			    in = new FileInputStream("./recursos/Victoria.wav");
+			    AudioStream voz = new AudioStream(in);
+			    AudioPlayer.player.start(voz);
+			} catch (IOException e1) {
+			    e1.printStackTrace();
+			}
+			
 			if (personaje.ganarExperiencia(enemigo.getNivel() * MULTIPILCADOR_EXP)) {
 			    juego.getPersonaje().setNivel(personaje.getNivel());
 			    juego.getPersonaje().setPuntosSkill(personaje.getPuntosSkill());

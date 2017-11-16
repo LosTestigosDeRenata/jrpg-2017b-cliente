@@ -1,12 +1,15 @@
 package cliente;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.Scanner;
 
+import javax.sound.midi.Soundbank;
 import javax.swing.JOptionPane;
 
 import com.google.gson.Gson;
@@ -23,6 +26,8 @@ import mensajeria.PaqueteComerciar;
 import mensajeria.PaqueteMensaje;
 import mensajeria.PaquetePersonaje;
 import mensajeria.PaqueteUsuario;
+import sun.audio.AudioPlayer;
+import sun.audio.AudioStream;
 
 /**
  * La clase Cliente tiene como función ejecutar el cliente.
@@ -124,6 +129,11 @@ public class Cliente extends Thread {
 	synchronized (this) {
 	    try {
 		ComandosCliente comand;
+
+		InputStream in = new FileInputStream("./recursos/Intro2Torres.wav");
+		AudioStream music = new AudioStream(in);
+		AudioPlayer.player.start(music);
+
 		// Creo el paquete que le voy a enviar al servidor
 		paqueteUsuario = new PaqueteUsuario();
 		MenuJugar menuJugar = null;

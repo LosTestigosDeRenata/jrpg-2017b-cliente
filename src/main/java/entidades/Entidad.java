@@ -4,11 +4,14 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Map;
+import java.util.Random;
 
 import javax.swing.JOptionPane;
 
@@ -29,11 +32,15 @@ import mundo.Grafo;
 import mundo.Mundo;
 import mundo.Nodo;
 import recursos.Recursos;
+import sun.audio.AudioPlayer;
+import sun.audio.AudioStream;
 
 /**
  * Clase Entidad
  */
 public class Entidad {
+
+    private static final int CANT_VOCES_PERSONAJE = 4;
 
     private static final int OFFSET_Y_GRAFICAR = 4;
 
@@ -467,6 +474,16 @@ public class Entidad {
 	}
 
 	if (juego.getHandlerMouse().getNuevoRecorrido() && !juego.getEstadoJuego().getHaySolicitud()) {
+	    
+	    InputStream in;
+	    try {
+		Random rm = new Random();
+		in = new FileInputStream("./recursos/Voz"+ (rm.nextInt(CANT_VOCES_PERSONAJE)+1) +".wav");
+		AudioStream voz = new AudioStream(in);
+		AudioPlayer.player.start(voz);
+	    } catch (IOException e1) {
+		e1.printStackTrace();
+	    }
 
 	    tileMoverme = Mundo.mouseATile(posMouseRecorrido[0] + juego.getCamara().getxOffset() - xOffset,
 		    posMouseRecorrido[1] + juego.getCamara().getyOffset() - yOffset);

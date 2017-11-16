@@ -3,8 +3,11 @@ package estados;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -27,6 +30,8 @@ import mensajeria.PaqueteNpc;
 import mensajeria.PaquetePersonaje;
 import mundo.Mundo;
 import recursos.Recursos;
+import sun.audio.AudioPlayer;
+import sun.audio.AudioStream;
 
 /**
  * Estado de batalla contra otro NPC
@@ -184,12 +189,20 @@ public class EstadoBatallaNpc extends Estado {
 			    juego.getEstadoJuego().setHaySolicitud(true, juego.getPersonaje(),
 				    MenuInfoPersonaje.MENUSUBIRNIVEL);
 			}
-
+			
 			paqueteFinalizarBatalla.setGanadorBatalla(juego.getPersonaje().getId());
 
 			juego.getPersonaje().setEstado(Estado.getEstadoJuego());
 			finalizarBatalla();
 			Estado.setEstado(juego.getEstadoJuego());
+			InputStream in;
+			try {
+			    in = new FileInputStream("./recursos/Victoria.wav");
+			    AudioStream voz = new AudioStream(in);
+			    AudioPlayer.player.start(voz);
+			} catch (IOException e1) {
+			    e1.printStackTrace();
+			}
 
 		    } else {
 			// BATALLAR VS NPC
@@ -208,6 +221,16 @@ public class EstadoBatallaNpc extends Estado {
 				    juego.getPersonaje().setEstado(Estado.getEstadoJuego());
 				    finalizarBatalla();
 				    Estado.setEstado(juego.getEstadoJuego());
+				    
+					InputStream in;
+					Random rm = new Random();
+					try {
+					    in = new FileInputStream("./recursos/Muerte"+ (rm.nextInt(2)+1) +".wav");
+					    AudioStream voz = new AudioStream(in);
+					    AudioPlayer.player.start(voz);
+					} catch (IOException e1) {
+					    e1.printStackTrace();
+					}
 				}
 
 				setMiTurno(true);
