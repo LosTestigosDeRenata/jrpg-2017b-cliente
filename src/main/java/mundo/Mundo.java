@@ -249,7 +249,10 @@ public class Mundo {
 	}
     }
     
-    public void modoGodOn(){
+    /**
+     * Se activa el modo cheat para atravesar las paredes
+     */
+    public void modoNoWallON(){
 	Nodo[][] nodos = new Nodo[ancho][alto];
 	int indice = 0;
 	for (int y = 0; y < alto; y++) {
