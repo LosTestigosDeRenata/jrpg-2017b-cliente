@@ -7,6 +7,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Random;
 
 import javax.swing.JOptionPane;
 
@@ -175,15 +176,6 @@ public class EstadoBatalla extends Estado {
 			juego.getEstadoJuego().setHaySolicitud(true, juego.getPersonaje(),
 				MenuInfoPersonaje.MENUGANARBATALLA);
 
-			InputStream in;
-			try {
-			    in = new FileInputStream("./recursos/Victoria.wav");
-			    AudioStream voz = new AudioStream(in);
-			    AudioPlayer.player.start(voz);
-			} catch (IOException e1) {
-			    e1.printStackTrace();
-			}
-			
 			if (personaje.ganarExperiencia(enemigo.getNivel() * MULTIPILCADOR_EXP)) {
 			    juego.getPersonaje().setNivel(personaje.getNivel());
 			    juego.getPersonaje().setPuntosSkill(personaje.getPuntosSkill());
@@ -193,6 +185,15 @@ public class EstadoBatalla extends Estado {
 			paqueteFinalizarBatalla.setGanadorBatalla(juego.getPersonaje().getId());
 			finalizarBatalla();
 			Estado.setEstado(juego.getEstadoJuego());
+
+			InputStream in;
+			try {
+			    in = new FileInputStream("./recursos/Victoria.wav");
+			    AudioStream win = new AudioStream(in);
+			    AudioPlayer.player.start(win);
+			} catch (IOException e1) {
+			    e1.printStackTrace();
+			}
 
 		    } else {
 			paqueteAtacar = new PaqueteAtacar(paquetePersonaje.getId(), paqueteEnemigo.getId(),

@@ -206,6 +206,7 @@ public class Cliente extends Thread {
 
 		    // Finalizo el menu de carga
 		    menuCarga.dispose();
+		    AudioPlayer.player.stop(music);
 		}
 	    } catch (IOException | InterruptedException | ClassNotFoundException e) {
 		JOptionPane.showMessageDialog(null, "Fallo la conexión con el servidor durante el inicio de sesión.");

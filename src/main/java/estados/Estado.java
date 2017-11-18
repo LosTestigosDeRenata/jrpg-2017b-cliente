@@ -17,6 +17,7 @@ public abstract class Estado {
     public static int estadoJuego = 1;
     public static int estadoBatalla = 2;
     public static int estadoBatallaNpc = ESTADO_BATALLA_NPC;
+    public static boolean modoGod = false;
 
     protected Juego juego;
 

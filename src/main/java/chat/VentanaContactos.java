@@ -107,7 +107,7 @@ public class VentanaContactos extends JFrame {
 	botonMc.addActionListener(new ActionListener() {
 	    @Override
 	    public void actionPerformed(final ActionEvent e) {
-		if (modelo.size() != 0) {
+//		if (modelo.size() != 0) {
 		    if (!juego.getChatsActivos().containsKey("Sala")) {
 			MiChat chat = new MiChat(juego);
 			juego.getChatsActivos().put("Sala", chat);
@@ -116,7 +116,7 @@ public class VentanaContactos extends JFrame {
 			botonMc.setEnabled(false);
 		    }
 		}
-	    }
+//	    }
 	});
 	botonMc.setBounds(X_BOTONMC, Y_BOTONMC, ANCHO_BOTONMC, ALTO_BOTONMC);
 	contentPane.add(botonMc);

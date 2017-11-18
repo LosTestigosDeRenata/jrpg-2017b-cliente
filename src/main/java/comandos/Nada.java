@@ -7,7 +7,7 @@ import mensajeria.Comando;
  * métodos cuando se produce un error al intentar obtener el comando del
  * paquete.
  */
-public class Nada extends Comando {
+public class Nada extends ComandosEscucha {
 
     /**
      * Constructor vacío

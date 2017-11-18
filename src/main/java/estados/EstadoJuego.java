@@ -270,4 +270,8 @@ public class EstadoJuego extends Estado {
 	return true;
     }
 
+    public Mundo getMundoMundo() {
+	return mundo;
+
+    }
 }
