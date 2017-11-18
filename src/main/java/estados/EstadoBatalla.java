@@ -244,7 +244,7 @@ public class EstadoBatalla extends Estado {
 	String nombre = paquetePersonaje.getNombre();
 	int salud = paquetePersonaje.getSaludTope();
 	int energia = paquetePersonaje.getEnergiaTope();
-	int fuerza = paquetePersonaje.getFuerza();
+	int fuerza = (int)(paquetePersonaje.getFuerza() * paquetePersonaje.getMultiplicadorFuerzaCheat());
 	int destreza = paquetePersonaje.getDestreza();
 	int inteligencia = paquetePersonaje.getInteligencia();
 	int experiencia = paquetePersonaje.getExperiencia();
@@ -267,7 +267,7 @@ public class EstadoBatalla extends Estado {
 	nombre = paqueteEnemigo.getNombre();
 	salud = paqueteEnemigo.getSaludTope();
 	energia = paqueteEnemigo.getEnergiaTope();
-	fuerza = paqueteEnemigo.getFuerza();
+	fuerza = (int) (paqueteEnemigo.getFuerza() * paqueteEnemigo.getMultiplicadorFuerzaCheat());
 	destreza = paqueteEnemigo.getDestreza();
 	inteligencia = paqueteEnemigo.getInteligencia();
 	experiencia = paqueteEnemigo.getExperiencia();
@@ -316,7 +316,7 @@ public class EstadoBatalla extends Estado {
 	    paquetePersonaje.setNivel(personaje.getNivel());
 	    paquetePersonaje.setExperiencia(personaje.getExperiencia());
 	    paquetePersonaje.setDestreza(personaje.getDestreza());
-	    paquetePersonaje.setFuerza(personaje.getFuerza());
+//	    paquetePersonaje.setFuerza(personaje.getFuerza());
 	    paquetePersonaje.setInteligencia(personaje.getInteligencia());
 
 	    paquetePersonaje.setPuntosSkill(personaje.getPuntosSkill());
@@ -328,7 +328,7 @@ public class EstadoBatalla extends Estado {
 	    paqueteEnemigo.setNivel(enemigo.getNivel());
 	    paqueteEnemigo.setExperiencia(enemigo.getExperiencia());
 	    paqueteEnemigo.setDestreza(enemigo.getDestreza());
-	    paqueteEnemigo.setFuerza(enemigo.getFuerza());
+//	    paqueteEnemigo.setFuerza(enemigo.getFuerza());
 	    paqueteEnemigo.setInteligencia(enemigo.getInteligencia());
 
 	    paqueteEnemigo.removerBonus();
