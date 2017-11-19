@@ -294,6 +294,8 @@ public class EstadoBatallaNpc extends Estado {
 		| InvocationTargetException | NoSuchMethodException | SecurityException e) {
 	    JOptionPane.showMessageDialog(null, "Error al crear la batalla");
 	}
+	// cheats
+	personaje.setInvulnerabilidad(paquetePersonaje.esInvulnerable());
 
 	try {
 	    System.out.println("dominio" + ".Npc" + paqueteEnemigo.getCasta());

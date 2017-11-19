@@ -139,7 +139,6 @@ public class EstadoJuego extends Estado {
     public void graficar(final Graphics g) {
 	g.drawImage(Recursos.getBackground(), 0, 0, juego.getAncho(), juego.getAlto(), null);
 	mundo.graficar(g);
-	// entidadPersonaje.graficar(g);
 	juego.getNpcManager().graficarNpcs(g);
 	graficarPersonajes(g);
 	mundo.graficarObstaculos(g);
@@ -176,9 +175,11 @@ public class EstadoJuego extends Estado {
 	    while (it.hasNext()) {
 		key = it.next();
 		actual = ubicacionPersonajes.get(key);
-
-		if (actual != null && actual.getIdPersonaje() != juego.getPersonaje().getId()
-			&& personajesConectados.get(actual.getIdPersonaje()).getEstado() == Estado.getEstadoJuego()) {
+		boolean validarInvisibilidad = paquetePersonaje.esInvisible() || !personajesConectados.get(actual.getIdPersonaje()).esInvisible();
+		System.out.println(validarInvisibilidad);
+		if ((actual != null && actual.getIdPersonaje() != juego.getPersonaje().getId()
+			&& personajesConectados.get(actual.getIdPersonaje()).getEstado() == Estado.getEstadoJuego())
+			&& validarInvisibilidad) {
 		    Pantalla.centerString(g,
 			    new Rectangle(
 				    (int) (actual.getPosX() - juego.getCamara().getxOffset() + X_OFFSET_CENTER_STRING),

@@ -32,6 +32,8 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
     private int experiencia;
     private int puntosSkill = 0;
     private double multiplicadorFuerzaCheat = 1;
+    private boolean invulnerabilidadActivada = false;
+    private boolean invisibilidadActivada = false;
 
     private ArrayList<Item> items = new ArrayList<Item>();
 
@@ -497,9 +499,6 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
     /**
      * Pone ultimo item
      */
-    /**
-     *
-     */
     public void ponerUltimoItem() {
 	final int i = items.size() - 1;
 	if (i >= 0) {
@@ -554,6 +553,38 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
      */
     public void setMultiplicadorFuerzaCheat(double multiplicadorFuerzaCheat) {
         this.multiplicadorFuerzaCheat = multiplicadorFuerzaCheat;
+    }
+
+    /**
+     * Pregunta si el personaje es invulnerable o no.
+     * @return devuelve true si es invulnerable
+     */
+    public boolean esInvulnerable() {
+        return invulnerabilidadActivada;
+    }
+
+    /**
+     * Activa o desactiva la invulnerabilidad del personaje del paquete.
+     * @param el valor de verdad a setear
+     */
+    public void setInvulnerabilidad(boolean invulnerabilidadActivada) {
+        this.invulnerabilidadActivada = invulnerabilidadActivada;
+    }
+
+    /**
+     * Pregunta si el personaje es invisible o no.
+     * @return devuelve true si es invisible
+     */
+    public boolean esInvisible() {
+        return invisibilidadActivada;
+    }
+
+    /**
+     * Activa o desactiva la invisibilidad del personaje del paquete.
+     * @param el valor de verdad a setear
+     */
+    public void setInvisibilidad(boolean invisibilidadActivada) {
+        this.invisibilidadActivada = invisibilidadActivada;
     }
 }
 
