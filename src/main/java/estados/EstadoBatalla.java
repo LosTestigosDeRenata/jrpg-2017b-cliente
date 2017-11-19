@@ -244,7 +244,7 @@ public class EstadoBatalla extends Estado {
 	String nombre = paquetePersonaje.getNombre();
 	int salud = paquetePersonaje.getSaludTope();
 	int energia = paquetePersonaje.getEnergiaTope();
-	int fuerza = paquetePersonaje.getFuerza();
+	int fuerza = (int)(paquetePersonaje.getFuerza() * paquetePersonaje.getMultiplicadorFuerzaCheat());
 	int destreza = paquetePersonaje.getDestreza();
 	int inteligencia = paquetePersonaje.getInteligencia();
 	int experiencia = paquetePersonaje.getExperiencia();
@@ -267,7 +267,7 @@ public class EstadoBatalla extends Estado {
 	nombre = paqueteEnemigo.getNombre();
 	salud = paqueteEnemigo.getSaludTope();
 	energia = paqueteEnemigo.getEnergiaTope();
-	fuerza = paqueteEnemigo.getFuerza();
+	fuerza = (int) (paqueteEnemigo.getFuerza() * paqueteEnemigo.getMultiplicadorFuerzaCheat());
 	destreza = paqueteEnemigo.getDestreza();
 	inteligencia = paqueteEnemigo.getInteligencia();
 	experiencia = paqueteEnemigo.getExperiencia();
@@ -310,20 +310,7 @@ public class EstadoBatalla extends Estado {
     private void finalizarBatalla() {
 	try {
 	    juego.getCliente().getSalida().writeObject(gson.toJson(paqueteFinalizarBatalla));
-
-	    paquetePersonaje.setSaludTope(personaje.getSaludTope());
-	    paquetePersonaje.setEnergiaTope(personaje.getEnergiaTope());
-	    paquetePersonaje.setNivel(personaje.getNivel());
-	    paquetePersonaje.setExperiencia(personaje.getExperiencia());
-	    paquetePersonaje.setDestreza(personaje.getDestreza());
-	    paquetePersonaje.setFuerza(personaje.getFuerza());
-	    paquetePersonaje.setInteligencia(personaje.getInteligencia());
-	    paquetePersonaje.setPuntosSkill(personaje.getPuntosSkill());
-
-	    paquetePersonaje.removerBonus();
-
 	    paquetePersonaje.setComando(Comando.ACTUALIZARPERSONAJE);
-
 	    juego.getCliente().getSalida().writeObject(gson.toJson(paquetePersonaje));
 	} catch (final IOException e) {
 	    JOptionPane.showMessageDialog(null, "Fallo la conexión con el servidor");

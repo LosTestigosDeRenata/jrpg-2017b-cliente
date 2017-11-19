@@ -31,6 +31,7 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
     private int nivel = 1;
     private int experiencia;
     private int puntosSkill = 0;
+    private double multiplicadorFuerzaCheat = 1;
 
     private ArrayList<Item> items = new ArrayList<Item>();
 
@@ -540,7 +541,19 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
     public void setPuntosSkill(final int puntosSkill) {
 	this.puntosSkill = puntosSkill;
     }
+
+    /**
+     * @return the multiplicadorFuerzaCheat
+     */
+    public double getMultiplicadorFuerzaCheat() {
+        return multiplicadorFuerzaCheat;
+    }
+
+    /**
+     * @param multiplicadorFuerzaCheat the multiplicadorFuerzaCheat to set
+     */
+    public void setMultiplicadorFuerzaCheat(double multiplicadorFuerzaCheat) {
+        this.multiplicadorFuerzaCheat = multiplicadorFuerzaCheat;
+    }
 }
-/*
- * POR FIN http://www.topito.com/wp-content/uploads/2013/01/code-21.gif
- */
+

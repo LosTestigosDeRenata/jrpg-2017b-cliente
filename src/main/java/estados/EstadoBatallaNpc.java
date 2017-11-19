@@ -189,7 +189,7 @@ public class EstadoBatallaNpc extends Estado {
 			    juego.getEstadoJuego().setHaySolicitud(true, juego.getPersonaje(),
 				    MenuInfoPersonaje.MENUSUBIRNIVEL);
 			}
-			
+
 			paqueteFinalizarBatalla.setGanadorBatalla(juego.getPersonaje().getId());
 
 			juego.getPersonaje().setEstado(Estado.getEstadoJuego());
@@ -221,16 +221,16 @@ public class EstadoBatallaNpc extends Estado {
 				    juego.getPersonaje().setEstado(Estado.getEstadoJuego());
 				    finalizarBatalla();
 				    Estado.setEstado(juego.getEstadoJuego());
-				    
-					InputStream in;
-					Random rm = new Random();
-					try {
-					    in = new FileInputStream("./recursos/Muerte"+ (rm.nextInt(2)+1) +".wav");
-					    AudioStream voz = new AudioStream(in);
-					    AudioPlayer.player.start(voz);
-					} catch (IOException e1) {
-					    e1.printStackTrace();
-					}
+
+				    InputStream in;
+				    Random rm = new Random();
+				    try {
+					in = new FileInputStream("./recursos/Muerte" + (rm.nextInt(2) + 1) + ".wav");
+					AudioStream voz = new AudioStream(in);
+					AudioPlayer.player.start(voz);
+				    } catch (IOException e1) {
+					e1.printStackTrace();
+				    }
 				}
 
 				setMiTurno(true);
@@ -276,7 +276,7 @@ public class EstadoBatallaNpc extends Estado {
 	String nombre = paquetePersonaje.getNombre();
 	int salud = paquetePersonaje.getSaludTope();
 	int energia = paquetePersonaje.getEnergiaTope();
-	int fuerza = paquetePersonaje.getFuerza();
+	int fuerza = (int) (paquetePersonaje.getFuerza() * paquetePersonaje.getMultiplicadorFuerzaCheat());
 	int destreza = paquetePersonaje.getDestreza();
 	int inteligencia = paquetePersonaje.getInteligencia();
 	int experiencia = paquetePersonaje.getExperiencia();
@@ -320,7 +320,8 @@ public class EstadoBatallaNpc extends Estado {
 		paquetePersonaje.setNivel(personaje.getNivel());
 		paquetePersonaje.setExperiencia(personaje.getExperiencia());
 		paquetePersonaje.setDestreza(personaje.getDestreza());
-		paquetePersonaje.setFuerza(personaje.getFuerza());
+		// paquetePersonaje.setFuerza((int)(personaje.getFuerza() /
+		// paquetePersonaje.getMultiplicadorFuerzaCheat()));
 		paquetePersonaje.setInteligencia(personaje.getInteligencia());
 
 		paquetePersonaje.setPuntosSkill(personaje.getPuntosSkill());

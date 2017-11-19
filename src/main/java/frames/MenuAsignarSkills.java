@@ -135,7 +135,7 @@ public class MenuAsignarSkills extends JFrame {
 	labelFuerza.setForeground(Color.WHITE);
 	labelFuerza.setHorizontalAlignment(SwingConstants.CENTER);
 	labelFuerza.setBounds(X_LABELFUERZA, Y_LABELFUERZA, ANCHO_LABELFUERZA, ALTO_LABELFUERZA);
-	labelFuerza.setText(String.valueOf(puntosFuerzaInicial));
+	labelFuerza.setText(String.valueOf((int) (puntosFuerzaInicial * cliente.getPaquetePersonaje().getMultiplicadorFuerzaCheat() )));
 	contentPane.add(labelFuerza);
 
 	final JLabel labelDestreza = new JLabel("");
@@ -266,7 +266,7 @@ public class MenuAsignarSkills extends JFrame {
 			buttonConfirm.setEnabled(false);
 		    }
 		    labelPuntos.setText(String.valueOf(puntosAsignar));
-		    labelFuerza.setText(String.valueOf(puntosFuerza));
+		    labelFuerza.setText(String.valueOf( (int) (puntosFuerza * cliente.getPaquetePersonaje().getMultiplicadorFuerzaCheat() )));
 		    if (puntosFuerza == puntosFuerzaInicial) {
 			buttonMinus.setEnabled(false);
 			buttonMore.setEnabled(true);
@@ -357,7 +357,7 @@ public class MenuAsignarSkills extends JFrame {
 		    puntosAsignar--;
 		    buttonConfirm.setEnabled(true);
 		    labelPuntos.setText(String.valueOf(puntosAsignar));
-		    labelFuerza.setText(String.valueOf(puntosFuerza));
+		    labelFuerza.setText(String.valueOf((int) (puntosFuerza * cliente.getPaquetePersonaje().getMultiplicadorFuerzaCheat() )));
 		    buttonMinus.setEnabled(true);
 		    if (puntosAsignar == 0) {
 			buttonMore.setEnabled(false);
@@ -437,12 +437,12 @@ public class MenuAsignarSkills extends JFrame {
 	    @Override
 	    public void actionPerformed(final ActionEvent paramActionEvent) {
 		// Puntos skills disponibles
-		puntosAsignar = (cliente.getPaquetePersonaje().getNivel() - 1) * (1 + 1 + 1);
+		puntosAsignar = (cliente.getPaquetePersonaje().getNivel() - 1) * (2 + 1);
 		labelPuntos.setText(String.valueOf(puntosAsignar));
 
 		// Puntos de fuerza base (bonus y items)
 		puntosFuerza = getMinusFuerza(cliente);
-		labelFuerza.setText(String.valueOf(puntosFuerza));
+		labelFuerza.setText(String.valueOf((int) (puntosFuerza * cliente.getPaquetePersonaje().getMultiplicadorFuerzaCheat() )));
 
 		// Puntos de destreza base (bonus y items)
 		puntosDestreza = getMinusDestreza(cliente);
