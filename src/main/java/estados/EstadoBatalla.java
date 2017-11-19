@@ -318,27 +318,13 @@ public class EstadoBatalla extends Estado {
 	    paquetePersonaje.setDestreza(personaje.getDestreza());
 	    paquetePersonaje.setFuerza(personaje.getFuerza());
 	    paquetePersonaje.setInteligencia(personaje.getInteligencia());
-
 	    paquetePersonaje.setPuntosSkill(personaje.getPuntosSkill());
 
 	    paquetePersonaje.removerBonus();
 
-	    paqueteEnemigo.setSaludTope(enemigo.getSaludTope());
-	    paqueteEnemigo.setEnergiaTope(enemigo.getEnergiaTope());
-	    paqueteEnemigo.setNivel(enemigo.getNivel());
-	    paqueteEnemigo.setExperiencia(enemigo.getExperiencia());
-	    paqueteEnemigo.setDestreza(enemigo.getDestreza());
-	    paqueteEnemigo.setFuerza(enemigo.getFuerza());
-	    paqueteEnemigo.setInteligencia(enemigo.getInteligencia());
-
-	    paqueteEnemigo.removerBonus();
-
 	    paquetePersonaje.setComando(Comando.ACTUALIZARPERSONAJE);
-	    paqueteEnemigo.setComando(Comando.ACTUALIZARPERSONAJE);
 
 	    juego.getCliente().getSalida().writeObject(gson.toJson(paquetePersonaje));
-	    juego.getCliente().getSalida().writeObject(gson.toJson(paqueteEnemigo));
-
 	} catch (final IOException e) {
 	    JOptionPane.showMessageDialog(null, "Fallo la conexión con el servidor");
 	}
