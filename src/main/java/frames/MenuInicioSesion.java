@@ -102,17 +102,17 @@ public class MenuInicioSesion extends JFrame {
 	layeredPane.setBounds(0, 0, ANCHO_PANE, ALTO_PANE);
 	contentPane.add(layeredPane);
 
-	JLabel lblNewLabel1 = new JLabel("Password");
-	lblNewLabel1.setBounds(X_LB_PASS, Y_LB_PASS, ANCHO_LB_PASS, ALTO_LB_PASS);
-	layeredPane.add(lblNewLabel1);
-	lblNewLabel1.setFont(new Font("Tahoma", Font.PLAIN, TAM_TXT));
-	lblNewLabel1.setForeground(Color.WHITE);
+	JLabel lblPassword = new JLabel("Password");
+	lblPassword.setBounds(X_LB_PASS, Y_LB_PASS, ANCHO_LB_PASS, ALTO_LB_PASS);
+	layeredPane.add(lblPassword);
+	lblPassword.setFont(new Font("Tahoma", Font.PLAIN, TAM_TXT));
+	lblPassword.setForeground(Color.WHITE);
 
-	JLabel lblNewLabel = new JLabel("Usuario");
-	lblNewLabel.setBounds(X_USUARIO, Y_USUARIO, ANCHO_USUARIO, ALTO_USUARIO);
-	layeredPane.add(lblNewLabel, new Integer(2));
-	lblNewLabel.setForeground(Color.WHITE);
-	lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, TAM_TXT));
+	JLabel lblUsuario = new JLabel("Usuario");
+	lblUsuario.setBounds(X_USUARIO, Y_USUARIO, ANCHO_USUARIO, ALTO_USUARIO);
+	layeredPane.add(lblUsuario, new Integer(2));
+	lblUsuario.setForeground(Color.WHITE);
+	lblUsuario.setFont(new Font("Tahoma", Font.PLAIN, TAM_TXT));
 
 	JLabel lblIngresar = new JLabel("Ingresar");
 	lblIngresar.setBounds(X_LB_INGRESAR, Y_LB_INGRESAR, ANCHO_LB_INGRESAR, ALTO_LB_INGRESAR);
