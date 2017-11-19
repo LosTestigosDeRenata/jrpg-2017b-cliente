@@ -117,8 +117,8 @@ public class Entidad {
     private float y;
     private float dx;
     private float dy;
-    private float xInicio;
-    private float yInicio;
+    //private float xInicio;
+    //private float yInicio;
     private float xFinal;
     private float yFinal;
     private int xOffset;
@@ -499,8 +499,8 @@ public class Entidad {
 
 	    enMovimiento = false;
 
-	    xInicio = x;
-	    yInicio = y;
+	    //xInicio = x;
+	    //yInicio = y;
 
 	    tileActual = Mundo.mouseATile(x, y);
 
@@ -764,10 +764,10 @@ public class Entidad {
 	    // sea minimo
 	    double minimo = Double.MAX_VALUE;
 	    int indiceMinimo = 0;
-	    Nodo nodoW = null;
+	    //Nodo nodoW = null;
 	    for (int i = 0; i < grafoLibres.obtenerCantidadDeNodosTotal(); i++) {
 		if (!conjSolucion[i] && vecCostos[i] < minimo) {
-		    nodoW = grafoLibres.obtenerNodos()[i];
+		    //nodoW = grafoLibres.obtenerNodos()[i];
 		    minimo = vecCostos[i];
 		    indiceMinimo = i;
 		}

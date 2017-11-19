@@ -151,7 +151,6 @@ public class MenuInicioSesion extends JFrame {
 	    @Override
 	    public void actionPerformed(final ActionEvent e) {
 		logIn(cliente);
-
 	    }
 	});
 

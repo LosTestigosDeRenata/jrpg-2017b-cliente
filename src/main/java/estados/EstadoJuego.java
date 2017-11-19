@@ -164,8 +164,8 @@ public class EstadoJuego extends Estado {
     public void graficarPersonajes(final Graphics g) {
 
 	if (juego.getPersonajesConectados() != null) {
-	    personajesConectados = new HashMap(juego.getPersonajesConectados());
-	    ubicacionPersonajes = new HashMap(juego.getUbicacionPersonajes());
+	    personajesConectados = new HashMap<Integer, PaquetePersonaje>(juego.getPersonajesConectados());
+	    ubicacionPersonajes = new HashMap<Integer, PaqueteMovimiento>(juego.getUbicacionPersonajes());
 	    Iterator<Integer> it = personajesConectados.keySet().iterator();
 	    int key;
 	    PaqueteMovimiento actual;

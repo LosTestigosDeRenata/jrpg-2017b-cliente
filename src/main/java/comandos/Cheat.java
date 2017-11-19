@@ -1,9 +1,6 @@
 package comandos;
 
-import java.io.IOException;
-import javax.swing.JOptionPane;
-import mensajeria.Comando;
-import mensajeria.PaqueteMensaje;
+
 import mensajeria.PaquetePersonaje;
 
 public class Cheat extends ComandosEscucha {

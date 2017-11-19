@@ -3,7 +3,6 @@ package comandos;
 import javax.swing.JOptionPane;
 
 import estados.Estado;
-import mundo.Mundo;
 
 /**
  * Comando del modo Dios : noclip Se activa y descativa con el mismo comando

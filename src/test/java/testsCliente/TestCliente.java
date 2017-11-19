@@ -66,7 +66,6 @@ public class TestCliente {
 					try {
 						server.close();
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
 						JOptionPane.showMessageDialog(null, "Falló");
 
 					}
@@ -77,6 +76,7 @@ public class TestCliente {
 		myThread.start();
 	}
 
+	@SuppressWarnings("deprecation")
 	@Test
 	public void testConexionConElServidor() {
 		Queue<Paquete> queue = new LinkedList<Paquete>();
@@ -106,6 +106,7 @@ public class TestCliente {
 
 
 
+	@SuppressWarnings("deprecation")
 	@Test
 	public void testRegistro() {
 
@@ -146,6 +147,7 @@ public class TestCliente {
 	}
 
 
+	@SuppressWarnings("deprecation")
 	@Test
 
 	public void testRegistroFallido() {
@@ -185,6 +187,7 @@ public class TestCliente {
 		}
 	}
 
+	@SuppressWarnings("deprecation")
 	@Test
 	public void testRegistrarPersonaje() throws IOException {
 		Queue<Paquete> queue = new LinkedList<Paquete>();
@@ -220,7 +223,7 @@ public class TestCliente {
 			cliente.getSalida().writeObject(gson.toJson(pu));
 
 			// Recibo la respuesta del servidor
-			Paquete paquete = gson.fromJson((String) cliente.getEntrada().readObject(), Paquete.class);
+			//Paquete paquete = gson.fromJson((String) cliente.getEntrada().readObject(), Paquete.class);
 
 			// Envio el paquete de registro de personaje
 			cliente.getSalida().writeObject(gson.toJson(pp));
@@ -245,6 +248,7 @@ public class TestCliente {
 		}
 	}
 
+	@SuppressWarnings("deprecation")
 	@Test
 	public void testIniciarSesion() throws IOException {
 		Queue<Paquete> queue = new LinkedList<Paquete>();
@@ -287,6 +291,7 @@ public class TestCliente {
 		}
 	}
 
+	@SuppressWarnings("deprecation")
 	@Test
 	public void testActualizarPersonaje() throws IOException {
 

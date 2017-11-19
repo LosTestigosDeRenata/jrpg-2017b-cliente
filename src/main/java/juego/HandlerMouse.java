@@ -2,14 +2,6 @@ package juego;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Random;
-
-import sun.audio.AudioPlayer;
-import sun.audio.AudioStream;
 
 /**
  * The Class HandlerMouse.
