@@ -175,8 +175,14 @@ public class EstadoJuego extends Estado {
 	    while (it.hasNext()) {
 		key = it.next();
 		actual = ubicacionPersonajes.get(key);
-		boolean validarInvisibilidad = paquetePersonaje.esInvisible() || !personajesConectados.get(actual.getIdPersonaje()).esInvisible();
+		boolean validarInvisibilidad = personajesConectados.get(juego.getPersonaje().getId()).esInvisible() || !personajesConectados.get(actual.getIdPersonaje()).esInvisible();
+		
+		if (actual.getIdPersonaje() != juego.getPersonaje().getId()) {
+		System.out.println("yo " + personajesConectados.get(juego.getPersonaje().getId()).esInvisible());
+		System.out.println("el " + personajesConectados.get(actual.getIdPersonaje()).esInvisible());
 		System.out.println(validarInvisibilidad);
+		}
+		
 		if ((actual != null && actual.getIdPersonaje() != juego.getPersonaje().getId()
 			&& personajesConectados.get(actual.getIdPersonaje()).getEstado() == Estado.getEstadoJuego())
 			&& validarInvisibilidad) {
