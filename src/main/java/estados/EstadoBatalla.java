@@ -244,7 +244,7 @@ public class EstadoBatalla extends Estado {
 	String nombre = paquetePersonaje.getNombre();
 	int salud = paquetePersonaje.getSaludTope();
 	int energia = paquetePersonaje.getEnergiaTope();
-	int fuerza = (int)(paquetePersonaje.getFuerza() * paquetePersonaje.getMultiplicadorFuerzaCheat());
+	int fuerza = (int) (paquetePersonaje.getFuerza() * paquetePersonaje.getMultiplicadorFuerzaCheat());
 	int destreza = paquetePersonaje.getDestreza();
 	int inteligencia = paquetePersonaje.getInteligencia();
 	int experiencia = paquetePersonaje.getExperiencia();
@@ -263,6 +263,8 @@ public class EstadoBatalla extends Estado {
 		| InvocationTargetException | NoSuchMethodException | SecurityException e) {
 	    JOptionPane.showMessageDialog(null, "Error al crear la batalla");
 	}
+	// cheats
+	personaje.setInvulnerabilidad(paquetePersonaje.esInvulnerable());
 
 	nombre = paqueteEnemigo.getNombre();
 	salud = paqueteEnemigo.getSaludTope();
@@ -290,6 +292,14 @@ public class EstadoBatalla extends Estado {
 	} else if (paqueteEnemigo.getRaza().equals("Elfo")) {
 	    enemigo = new Elfo(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, id);
 	}
+	enemigo.setInvulnerabilidad(paqueteEnemigo.esInvulnerable());
+
+	// si ambos personajes son invulnerables, los vuelvo a hacer vulnerables
+	// en la batalla
+	if (personaje.esInvulnerable() && enemigo.esInvulnerable()) {
+	    personaje.setInvulnerabilidad(false);
+	    enemigo.setInvulnerabilidad(false);
+	}
     }
 
     /**
@@ -310,6 +320,12 @@ public class EstadoBatalla extends Estado {
     private void finalizarBatalla() {
 	try {
 	    juego.getCliente().getSalida().writeObject(gson.toJson(paqueteFinalizarBatalla));
+	    paquetePersonaje.setSaludTope(personaje.getSaludTope());
+	    paquetePersonaje.setEnergiaTope(personaje.getEnergiaTope());
+	    paquetePersonaje.setExperiencia(personaje.getExperiencia());
+	    paquetePersonaje.setNivel(personaje.getNivel());
+	    paquetePersonaje.setPuntosSkill(personaje.getPuntosSkill());
+	    paquetePersonaje.removerBonus();
 	    paquetePersonaje.setComando(Comando.ACTUALIZARPERSONAJE);
 	    juego.getCliente().getSalida().writeObject(gson.toJson(paquetePersonaje));
 	} catch (final IOException e) {
