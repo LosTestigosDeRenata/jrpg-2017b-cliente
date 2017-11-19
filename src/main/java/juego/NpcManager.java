@@ -229,10 +229,7 @@ public class NpcManager {
 	    PaqueteNpc actualNpc;
 	    PaqueteMovimiento actualUbicacion;
 
-	    /*
-	     * g.setColor(Color.WHITE); g.setFont(new Font("Book Antiqua",
-	     * Font.PLAIN, 15));
-	     */
+
 	    while (it.hasNext()) {
 		key = it.next();
 		actualNpc = paquetesNpcs.get(key);
@@ -241,7 +238,7 @@ public class NpcManager {
 		float[] coords = new float[2];
 		coords = Mundo.dosDaIso(actualUbicacion.getPosX(), actualUbicacion.getPosY());
 
-		// System.out.println(actualUbicacion.getDireccion());
+
 		Entidad ente = new Entidad(juego, mundo, ANCHO_ENTIDAD,
 			ALTO_ENTIDAD, actualNpc.getNombre(), coords[0], coords[1],
 			Recursos.getPersonaje().get(actualNpc.getRaza()), VEL_ANIMACION);

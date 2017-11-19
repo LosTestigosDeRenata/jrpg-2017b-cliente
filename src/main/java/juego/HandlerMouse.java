@@ -51,7 +51,6 @@ public class HandlerMouse implements MouseListener {
 
     @Override
     public void mouseReleased(final MouseEvent e) {
-	// System.out.println("MOUSE RELEASED");
 	if (e.getButton() == MouseEvent.BUTTON1) {
 	    posMouse[0] = e.getX();
 	    posMouse[1] = e.getY();

@@ -298,7 +298,6 @@ public class EstadoBatallaNpc extends Estado {
 	personaje.setInvulnerabilidad(paquetePersonaje.esInvulnerable());
 
 	try {
-	    System.out.println("dominio" + ".Npc" + paqueteEnemigo.getCasta());
 	    enemigo = (NonPlayableCharacter) Class.forName("dominio" + ".Npc" + paqueteEnemigo.getCasta())
 		    .getConstructor(String.class, Integer.TYPE)
 		    .newInstance(paqueteEnemigo.getNombre(), paqueteEnemigo.getNivel());

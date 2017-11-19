@@ -176,7 +176,7 @@ public class EstadoJuego extends Estado {
 		key = it.next();
 		actual = ubicacionPersonajes.get(key);
 		boolean validarInvisibilidad = paquetePersonaje.esInvisible() || !personajesConectados.get(actual.getIdPersonaje()).esInvisible();
-		System.out.println(validarInvisibilidad);
+		
 		if ((actual != null && actual.getIdPersonaje() != juego.getPersonaje().getId()
 			&& personajesConectados.get(actual.getIdPersonaje()).getEstado() == Estado.getEstadoJuego())
 			&& validarInvisibilidad) {
