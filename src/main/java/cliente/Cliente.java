@@ -8,8 +8,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.Scanner;
-
-import javax.sound.midi.Soundbank;
 import javax.swing.JOptionPane;
 
 import com.google.gson.Gson;
@@ -84,10 +82,7 @@ public class Cliente extends Thread {
      */
     public Cliente() {
 
-	ip = JOptionPane.showInputDialog("Ingrese IP del servidor: (default localhost)");
-	if (ip == null) {
-	    ip = "localhost";
-	}
+    ip = "localhost";
 	try {
 	    Scanner sc = new Scanner(new File("config.txt"));
 	    sc.nextLine();
