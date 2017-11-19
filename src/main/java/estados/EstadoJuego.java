@@ -175,9 +175,11 @@ public class EstadoJuego extends Estado {
 	    while (it.hasNext()) {
 		key = it.next();
 		actual = ubicacionPersonajes.get(key);
-		boolean puedoDibujar = !paquetePersonaje.esInvisible() || personajesConectados.get(actual.getIdPersonaje()).esInvisible();
-		if (actual != null && actual.getIdPersonaje() != juego.getPersonaje().getId()
-			&& personajesConectados.get(actual.getIdPersonaje()).getEstado() == Estado.getEstadoJuego()) {
+		boolean validarInvisibilidad = paquetePersonaje.esInvisible() || !personajesConectados.get(actual.getIdPersonaje()).esInvisible();
+		System.out.println(validarInvisibilidad);
+		if ((actual != null && actual.getIdPersonaje() != juego.getPersonaje().getId()
+			&& personajesConectados.get(actual.getIdPersonaje()).getEstado() == Estado.getEstadoJuego())
+			&& validarInvisibilidad) {
 		    Pantalla.centerString(g,
 			    new Rectangle(
 				    (int) (actual.getPosX() - juego.getCamara().getxOffset() + X_OFFSET_CENTER_STRING),
