@@ -34,6 +34,7 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
     private double multiplicadorFuerzaCheat = 1;
     private boolean invulnerabilidadActivada = false;
     private boolean invisibilidadActivada = false;
+    private boolean noclipActivado = false;
 
     private ArrayList<Item> items = new ArrayList<Item>();
 
@@ -586,5 +587,21 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
     public void setInvisibilidad(boolean invisibilidadActivada) {
         this.invisibilidadActivada = invisibilidadActivada;
     }
+
+	/**
+	 * 
+	 * @return the noclipActivado
+	 */
+	public boolean isNoclipActivado() {
+		return noclipActivado;
+	}
+
+	/**
+	 * @param noclipActivado the noclipActivado to set
+	 */
+	public void setNoclipActivado(boolean noclipActivado) {
+		this.noclipActivado = noclipActivado;
+	}
+    
 }
 
