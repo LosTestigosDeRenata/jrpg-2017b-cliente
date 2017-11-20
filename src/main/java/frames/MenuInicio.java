@@ -99,27 +99,27 @@ public class MenuInicio extends JFrame {
 	contentPane.add(layeredPane);
 
 	// Boton Jugar
-	JLabel lblRegistrarse = new JLabel("Jugar");
-	lblRegistrarse.setBounds(X_BTN_JUGAR, Y_BTN_JUGAR, ANCHO_BTN_JUGAR, ALTO_BTN_JUGAR);
-	layeredPane.add(lblRegistrarse, new Integer(2));
-	lblRegistrarse.setForeground(Color.WHITE);
-	lblRegistrarse.setEnabled(true);
-	lblRegistrarse.setFont(new Font("Tahoma", Font.PLAIN, TAM_TEXTO));
-	lblRegistrarse.setBackground(Color.WHITE);
+	JLabel lblJugar = new JLabel("Jugar");
+	lblJugar.setBounds(X_BTN_JUGAR, Y_BTN_JUGAR, ANCHO_BTN_JUGAR, ALTO_BTN_JUGAR);
+	layeredPane.add(lblJugar, new Integer(2));
+	lblJugar.setForeground(Color.WHITE);
+	lblJugar.setEnabled(true);
+	lblJugar.setFont(new Font("Tahoma", Font.PLAIN, TAM_TEXTO));
+	lblJugar.setBackground(Color.WHITE);
 
 	// Boton Salir
-	JLabel lblIniciarSesion = new JLabel("Salir");
-	lblIniciarSesion.setBounds(X_BTN_SALIR, Y_BTN_SALIR, ANCHO_BTN_SALIR, ALTO_BTN_SALIR);
-	layeredPane.add(lblIniciarSesion, new Integer(2));
-	lblIniciarSesion.setForeground(Color.WHITE);
-	lblIniciarSesion.setFont(new Font("Tahoma", Font.PLAIN, TAM_TEXTO));
+	JLabel lblSalir = new JLabel("Salir");
+	lblSalir.setBounds(X_BTN_SALIR, Y_BTN_SALIR, ANCHO_BTN_SALIR, ALTO_BTN_SALIR);
+	layeredPane.add(lblSalir, new Integer(2));
+	lblSalir.setForeground(Color.WHITE);
+	lblSalir.setFont(new Font("Tahoma", Font.PLAIN, TAM_TEXTO));
 
-	JButton btnRegistrar = new JButton("Jugar");
-	btnRegistrar.setBounds(X_BTN_REG, Y_BTN_REG, ANCHO_BTN_REG, ALTO_BTN_REG);
-	layeredPane.add(btnRegistrar, new Integer(1));
-	btnRegistrar.setFocusable(false);
-	btnRegistrar.setIcon(new ImageIcon(MenuJugar.class.getResource("/frames/BotonMenu.png")));
-	btnRegistrar.addActionListener(new ActionListener() {
+	JButton btnJugar = new JButton("Jugar");
+	btnJugar.setBounds(X_BTN_REG, Y_BTN_REG, ANCHO_BTN_REG, ALTO_BTN_REG);
+	layeredPane.add(btnJugar, new Integer(1));
+	btnJugar.setFocusable(false);
+	btnJugar.setIcon(new ImageIcon(MenuJugar.class.getResource("/frames/BotonMenu.png")));
+	btnJugar.addActionListener(new ActionListener() {
 	    @Override
 	    public void actionPerformed(final ActionEvent e) {
 	    Cliente cliente;
@@ -139,12 +139,12 @@ public class MenuInicio extends JFrame {
 	    }
 	});
 
-	JButton btnIniciarSesion = new JButton("Salir");
-	btnIniciarSesion.setBounds(X_BTN_INICIO, Y_BTN_INICIO, ANCHO_BTN_INICIO, ALTO_BTN_INICIO);
-	layeredPane.add(btnIniciarSesion, new Integer(1));
-	btnIniciarSesion.setFocusable(false);
-	btnIniciarSesion.setIcon(new ImageIcon(MenuJugar.class.getResource("/frames/BotonMenu.png")));
-	btnIniciarSesion.addActionListener(new ActionListener() {
+	JButton btnSalir = new JButton("Salir");
+	btnSalir.setBounds(X_BTN_INICIO, Y_BTN_INICIO, ANCHO_BTN_INICIO, ALTO_BTN_INICIO);
+	layeredPane.add(btnSalir, new Integer(1));
+	btnSalir.setFocusable(false);
+	btnSalir.setIcon(new ImageIcon(MenuJugar.class.getResource("/frames/BotonMenu.png")));
+	btnSalir.addActionListener(new ActionListener() {
 	    @Override
 	    public void actionPerformed(final ActionEvent e) {
 		dispose();

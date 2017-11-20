@@ -14,7 +14,6 @@ public class FinalizarBatalla extends ComandosEscucha {
 	PaqueteFinalizarBatalla paqueteFinalizarBatalla = gson.fromJson(cadenaLeida, PaqueteFinalizarBatalla.class);
 
 	// Batalló contra un npc
-	System.out.println("Recibio finalizar: " + paqueteFinalizarBatalla.getIdEnemigo());
 	if (paqueteFinalizarBatalla.getIdEnemigo() < 0) {
 	    // si ganó el humano
 	    if (paqueteFinalizarBatalla.getGanadorBatalla() != paqueteFinalizarBatalla.getIdEnemigo() * -1) {

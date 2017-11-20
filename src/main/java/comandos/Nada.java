@@ -1,6 +1,5 @@
 package comandos;
 
-import mensajeria.Comando;
 
 /**
  * Clase que consiste en un comando que no hace nada. Es devuelto por algunos

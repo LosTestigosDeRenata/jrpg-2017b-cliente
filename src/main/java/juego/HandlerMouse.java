@@ -2,14 +2,6 @@ package juego;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Random;
-
-import sun.audio.AudioPlayer;
-import sun.audio.AudioStream;
 
 /**
  * The Class HandlerMouse.
@@ -59,7 +51,6 @@ public class HandlerMouse implements MouseListener {
 
     @Override
     public void mouseReleased(final MouseEvent e) {
-	// System.out.println("MOUSE RELEASED");
 	if (e.getButton() == MouseEvent.BUTTON1) {
 	    posMouse[0] = e.getX();
 	    posMouse[1] = e.getY();

@@ -63,7 +63,6 @@ public class EscuchaMensajes extends Thread {
 
 	    }
 	} catch (Exception e) {
-	    System.out.println(e.getMessage());
 	    JOptionPane.showMessageDialog(null, "Fallo la conexión con el servidor (EscuchaMensajes)");
 	}
     }

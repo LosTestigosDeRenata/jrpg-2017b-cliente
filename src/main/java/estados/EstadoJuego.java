@@ -164,8 +164,8 @@ public class EstadoJuego extends Estado {
     public void graficarPersonajes(final Graphics g) {
 
 	if (juego.getPersonajesConectados() != null) {
-	    personajesConectados = new HashMap(juego.getPersonajesConectados());
-	    ubicacionPersonajes = new HashMap(juego.getUbicacionPersonajes());
+	    personajesConectados = new HashMap<Integer, PaquetePersonaje>(juego.getPersonajesConectados());
+	    ubicacionPersonajes = new HashMap<Integer, PaqueteMovimiento>(juego.getUbicacionPersonajes());
 	    Iterator<Integer> it = personajesConectados.keySet().iterator();
 	    int key;
 	    PaqueteMovimiento actual;
@@ -176,13 +176,7 @@ public class EstadoJuego extends Estado {
 		key = it.next();
 		actual = ubicacionPersonajes.get(key);
 		boolean validarInvisibilidad = personajesConectados.get(juego.getPersonaje().getId()).esInvisible() || !personajesConectados.get(actual.getIdPersonaje()).esInvisible();
-		
-		if (actual.getIdPersonaje() != juego.getPersonaje().getId()) {
-		System.out.println("yo " + personajesConectados.get(juego.getPersonaje().getId()).esInvisible());
-		System.out.println("el " + personajesConectados.get(actual.getIdPersonaje()).esInvisible());
-		System.out.println(validarInvisibilidad);
-		}
-		
+
 		if ((actual != null && actual.getIdPersonaje() != juego.getPersonaje().getId()
 			&& personajesConectados.get(actual.getIdPersonaje()).getEstado() == Estado.getEstadoJuego())
 			&& validarInvisibilidad) {

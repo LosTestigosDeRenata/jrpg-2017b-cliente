@@ -5,19 +5,12 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Random;
-
 import dominio.Personaje;
 import juego.Pantalla;
 import mensajeria.Paquete;
 import mensajeria.PaqueteNpc;
 import mensajeria.PaquetePersonaje;
 import recursos.Recursos;
-import sun.audio.AudioPlayer;
-import sun.audio.AudioStream;
 
 /**
  * Menu que contiene la informacion del personaje
