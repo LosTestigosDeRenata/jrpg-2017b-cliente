@@ -320,11 +320,6 @@ public class EstadoBatallaNpc extends Estado {
 		paquetePersonaje.setEnergiaTope(personaje.getEnergiaTope());
 		paquetePersonaje.setNivel(personaje.getNivel());
 		paquetePersonaje.setExperiencia(personaje.getExperiencia());
-		paquetePersonaje.setDestreza(personaje.getDestreza());
-		// paquetePersonaje.setFuerza((int)(personaje.getFuerza() /
-		// paquetePersonaje.getMultiplicadorFuerzaCheat()));
-		paquetePersonaje.setInteligencia(personaje.getInteligencia());
-
 		paquetePersonaje.setPuntosSkill(personaje.getPuntosSkill());
 		paquetePersonaje.removerBonus();
 

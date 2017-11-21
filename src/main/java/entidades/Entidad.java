@@ -41,69 +41,37 @@ import sun.audio.AudioStream;
 public class Entidad {
 
     private static final int CANT_VOCES_PERSONAJE = 12;
-
     private static final int OFFSET_Y_GRAFICAR = 4;
-
     private static final int ALTO_PANTALLA = 10;
-
     private static final int DOSCERO = 20;
-
     private static final int MOVER_ABAJO_IZQ = 7;
-
     private static final int MOVER_ABAJO_DER = 5;
-
     private static final int MOVER_DER = 4;
-
     private static final int MOVER_ARRIBA_DER = 3;
-
     private static final int MOVER_IZQ = 0;
-
     private static final int MOVER_ARRIBA_IZQ = 1;
-
     private static final double VALOR_SUMAR_DIJKSTRA = 1.5;
-
     private static final int TAM_NOMBRE_LETRA = 15;
-
     private static final int MAX1_MOUSE_COMERCIAR = 29;
-
     private static final int MAX0_MOUSE_COMERCIAR = 71;
-
     private static final int MIN0_MOUSE_COMERCIAR = 44;
-
     private static final int MAX1_MOUSE_CONTACTOS = 559;
-
     private static final int MIN1_MOUSE_CONTACTOS = 524;
-
     private static final int MAX0_MOUSE_CONTACTOS = 105;
-
     private static final int MIN0_MOUSE_CONTACTOS = 3;
-
     private static final int MAX1_MOUSE_SALIR = 597;
-
     private static final int MIN1_MOUSE_SALIR = 562;
-
     private static final int MAX0_MOUSE_SALIR = 105;
-
     private static final int MIN0_MOUSE_SALIR = 3;
-
     private static final int MAX1_MOUSE_MENUINVENTARIO = 597;
-
     private static final int MIN1_MOUSE_MENUINVENTARIO = 545;
-
     private static final int MAX0_MOUSE_MENUINVENTARIO = 797;
-
     private static final int MIN0_MOUSE_MENUINVENTARIO = 738;
-
     private static final int SEIS = 6;
-
     private static final int MOVER_ABAJO = SEIS;
-
     private static final int DOS = 2;
-
     private static final int MOVER_ARRIBA = DOS;
-
     private static final int SEISCUATRO = 64;
-
     private static final int TRESDOS = 32;
 
     Juego juego;
@@ -197,8 +165,6 @@ public class Entidad {
 
 	x = (int) (spawnX / SEISCUATRO) * SEISCUATRO;
 	y = (int) (spawnY / TRESDOS) * TRESDOS;
-	// x = spawnX;
-	// y = spawnY;
 
 	moverIzq = new Animacion(velAnimacion, animaciones.get(MOVER_IZQ));
 	moverArribaIzq = new Animacion(velAnimacion, animaciones.get(MOVER_ARRIBA_IZQ));
@@ -477,12 +443,7 @@ public class Entidad {
 	}
 
 	if (!enMovimiento && tileMoverme != null) {
-
 	    enMovimiento = false;
-
-	    //xInicio = x;
-	    //yInicio = y;
-
 	    tileActual = Mundo.mouseATile(x, y);
 
 	    if (tileMoverme[0] < 0 || tileMoverme[1] < 0 || tileMoverme[0] >= mundo.obtenerAncho()

@@ -49,7 +49,7 @@ public class EstadoJuego extends Estado {
     private static final int ANCHO_MENU = 102;
     private static final int Y_MENU = 562;
     private static final int X_MENU = 3;
-    private static final int CINCO = 5;
+    private static final int DEFAULT_FRAME = 5;
     private static final int ALTO_MOCHILA = 52;
     private static final int ANCHO_MOCHILA = 59;
     private static final int Y_MOCHILA = 545;
@@ -97,9 +97,7 @@ public class EstadoJuego extends Estado {
 	paquetePersonaje = juego.getPersonaje();
 	entidadPersonaje = new Entidad(juego, mundo, X_ENTIDAD, Y_ENTIDAD, juego.getPersonaje().getNombre(), 0, 0,
 		Recursos.getPersonaje().get(juego.getPersonaje().getRaza()), VEL_ANIMACION);
-	// ente = new Entidad(juego, mundo, 256, 256, "Lucas Videla", 128, 128,
-	// Recursos.personaje.get("Orco"), 15);
-	miniaturaPersonaje = Recursos.getPersonaje().get(paquetePersonaje.getRaza()).get(CINCO)[0];
+	miniaturaPersonaje = Recursos.getPersonaje().get(paquetePersonaje.getRaza()).get(DEFAULT_FRAME)[0];
 
 	// Inicializo NpcManager
 	npcManager = new NpcManager(juego, mundo);
