@@ -61,6 +61,4 @@ public class Grafo {
     public int obtenerCantidadDeNodosTotal() {
 	return cantidadDeNodosTotal;
     }
-    
-
 }

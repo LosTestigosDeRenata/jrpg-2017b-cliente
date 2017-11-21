@@ -848,3 +848,4 @@ public class Entidad {
 	this.idEnemigo = idEnemigo;
     }
 }
+

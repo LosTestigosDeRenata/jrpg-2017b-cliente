@@ -113,7 +113,7 @@ public class Celda extends JPanel {
 	return label;
     }
 
-    MouseListener mouseListener = new MouseAdapter() {
+    private MouseListener mouseListener = new MouseAdapter() {
 	@Override
 	public void mouseClicked(final MouseEvent e) {
 	    Object[] options = {"Tirar", "Cancelar" };

@@ -57,7 +57,8 @@ public class Inventario extends JPanel {
 		    }
 		}
 		cellPane.setBorder(border);
-		gbc.weightx = gbc.weighty = 1.0;
+		gbc.weightx = 1.0;
+		gbc.weighty = 1.0;
 		gbc.fill = GridBagConstraints.BOTH;
 
 		add(cellPane, gbc);

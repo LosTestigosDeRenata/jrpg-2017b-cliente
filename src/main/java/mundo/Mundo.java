@@ -248,11 +248,11 @@ public class Mundo {
 	    }
 	}
     }
-    
+
     /**
      * Se activa el modo cheat para atravesar las paredes
      */
-    public void modoNoWallON(){
+    public void modoNoWallON() {
 	Nodo[][] nodos = new Nodo[ancho][alto];
 	int indice = 0;
 	for (int y = 0; y < alto; y++) {
@@ -260,12 +260,12 @@ public class Mundo {
 		nodos[y][x] = new Nodo(indice++, x, y);
 	    }
 	}
-	
+
 	for (int x = 0; x < ancho; x++) {
 	    for (int y = 0; y < alto; y++) {
-		if(y < alto - 1){
-			nodos[x][y].agregarAdyacente(nodos[x][y + 1]);
-			nodos[x][y + 1].agregarAdyacente(nodos[x][y]);
+		if (y < alto - 1) {
+		    nodos[x][y].agregarAdyacente(nodos[x][y + 1]);
+		    nodos[x][y + 1].agregarAdyacente(nodos[x][y]);
 		}
 		if (x < ancho - 1) {
 		    if (y > 0) {
@@ -281,7 +281,7 @@ public class Mundo {
 		}
 	    }
 	}
-	
+
 	grafoDeTilesNoSolidos = new Grafo(ancho * alto);
 	// Paso la matriz a un array
 	for (int i = 0; i < ancho; i++) {
@@ -290,6 +290,7 @@ public class Mundo {
 	    }
 	}
     }
+
     /**
      * Obtener grafo de tiles no solidos.
      * @return grafo
@@ -365,6 +366,4 @@ public class Mundo {
     public Grafo getGrafoDeTilesNoSolidos() {
 	return grafoDeTilesNoSolidos;
     }
-    
-
 }

@@ -23,7 +23,7 @@ import mensajeria.PaquetePersonaje;
 /**
  * Clase Juego, contiene los estados de batalla, los paquetes del jugador,
  * cliente, personajes conectados
- */
+*/
 public class Juego implements Runnable {
 
     /** The pantalla. */
@@ -43,7 +43,7 @@ public class Juego implements Runnable {
 
     /** The Constant FPS. */
     private static final int FPS = 60;
-    
+
     /** The Constant FRAMESBUFFERED. */
     private static final int FRAMESBUFFERED = 3;
 

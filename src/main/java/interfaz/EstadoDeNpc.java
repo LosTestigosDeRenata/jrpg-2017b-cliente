@@ -73,5 +73,4 @@ public class EstadoDeNpc {
 	g.setColor(Color.GREEN);
 	g.drawString(String.valueOf(npc.getNivel()), x + OFFSET_ANCHO, y + OFFSET_ALTO);
     }
-
 }
