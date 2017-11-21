@@ -194,7 +194,8 @@ public class MenuStats extends JFrame {
 	saludPj.setBounds(COL2_BTN_GENERICO, FIL4_BTN_GENERICO, ANCHO_BTN_GENERICO, ALTO_BTN_GENERICO);
 	contentPane.add(saludPj);
 
-	final JLabel fzaPj = new JLabel(String.valueOf((int)(paquetePersonaje.getFuerza() * paquetePersonaje.getMultiplicadorFuerzaCheat())));
+	final JLabel fzaPj = new JLabel(String.valueOf((int) (paquetePersonaje.getFuerza()
+		* paquetePersonaje.getMultiplicadorFuerzaCheat())));
 	fzaPj.setForeground(Color.WHITE);
 	fzaPj.setHorizontalAlignment(SwingConstants.RIGHT);
 	fzaPj.setBounds(COL2_BTN_GENERICO, FIL3_BTN_GENERICO, ANCHO_BTN_GENERICO, ALTO_BTN_GENERICO);

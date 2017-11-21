@@ -163,7 +163,8 @@ public class MenuInfoPersonaje {
 	g.setColor(Color.BLACK);
 	Pantalla.centerString(g, new Rectangle(x, y + OFFSET_200, MENU.getWidth(), 0), "¡Has sido derrotado!");
 	g.setFont(new Font("Book Antiqua", 0, TAM_TXT1));
-	Pantalla.centerString(g, new Rectangle(x, y + OFFSET_250, MENU.getWidth(), 0), "¡No te rindas! Sigue luchando");
+	Pantalla.centerString(g,
+		new Rectangle(x, y + OFFSET_250, MENU.getWidth(), 0), "¡No te rindas! Sigue luchando");
 	Pantalla.centerString(g, new Rectangle(x, y + OFFSET_270, MENU.getWidth(), 0), "contra los demás personajes");
 	Pantalla.centerString(g, new Rectangle(x, y + OFFSET_290, MENU.getWidth(), 0), "para aumentar tu nivel y");
 	Pantalla.centerString(g, new Rectangle(x, y + OFFSET_310, MENU.getWidth(), 0), "mejorar tus atributos.");

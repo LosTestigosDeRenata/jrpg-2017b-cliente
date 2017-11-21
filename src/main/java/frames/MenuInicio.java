@@ -122,20 +122,20 @@ public class MenuInicio extends JFrame {
 	btnJugar.addActionListener(new ActionListener() {
 	    @Override
 	    public void actionPerformed(final ActionEvent e) {
-	    Cliente cliente;
-	    String conexion = JOptionPane.showInputDialog("Ingrese IP del servidor: (default localhost)");
-	  
-	    if(conexion!=null) {
-	    	if(!conexion.equals("")) {
-	    		String[] dir = conexion.split(":");
-	    		cliente = new Cliente(dir[0],Integer.parseInt(dir[1]));
-	    		}
-	    	else
-	    		cliente = new Cliente(); 
-	    	
-	    	cliente.start();
-	    	dispose();
-	    	}
+		Cliente cliente;
+		String conexion = JOptionPane.showInputDialog("Ingrese IP del servidor: (default localhost)");
+
+		if (conexion != null) {
+		    if (!conexion.equals("")) {
+			String[] dir = conexion.split(":");
+			cliente = new Cliente(dir[0], Integer.parseInt(dir[1]));
+		    } else {
+			cliente = new Cliente();
+		    }
+
+		    cliente.start();
+		    dispose();
+		}
 	    }
 	});
 

@@ -175,7 +175,8 @@ public class EstadoJuego extends Estado {
 	    while (it.hasNext()) {
 		key = it.next();
 		actual = ubicacionPersonajes.get(key);
-		boolean validarInvisibilidad = personajesConectados.get(juego.getPersonaje().getId()).esInvisible() || !personajesConectados.get(actual.getIdPersonaje()).esInvisible();
+		boolean validarInvisibilidad = personajesConectados.get(juego.getPersonaje().getId()).esInvisible()
+				|| !personajesConectados.get(actual.getIdPersonaje()).esInvisible();
 		if ((actual != null && actual.getIdPersonaje() != juego.getPersonaje().getId()
 			&& personajesConectados.get(actual.getIdPersonaje()).getEstado() == Estado.getEstadoJuego())
 			&& validarInvisibilidad) {
@@ -265,11 +266,19 @@ public class EstadoJuego extends Estado {
 	return tipoSolicitud;
     }
 
+    /**
+     * Gets the estado de juego.
+     * @return the estado de juego
+     */
     @Override
     public boolean esEstadoDeJuego() {
 	return true;
     }
 
+    /**
+     * Gets the mundo.
+     * @return the mundo
+     */
     public Mundo getMundoMundo() {
 	return mundo;
 
