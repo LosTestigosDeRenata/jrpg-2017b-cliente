@@ -10,7 +10,7 @@ public class NoWall extends ComandosEscucha {
 
 	@Override
 	public void ejecutar() {
-		if (Estado.modoGod == false) {
+		if (!Estado.modoGod) {
 			juego.getEstadoJuego().getMundoMundo().modoNoWallON();
 			Estado.modoGod = true;
 		} else {

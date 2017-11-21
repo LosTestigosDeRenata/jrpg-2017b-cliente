@@ -397,7 +397,7 @@ public class Entidad {
 
 			    if (tileMovermeLocal[0] == tilePersonajes[0] && tileMovermeLocal[1] == tilePersonajes[1]) {
 				idEnemigo = actual.getIdPersonaje();
-				float xY[] = Mundo.isoA2D(x, y);
+				float[] xY = Mundo.isoA2D(x, y);
 
 				// ESTA ESTE PARA NO MOVERME HASTA EL LUGAR.
 				if (xY[0] >= MIN0_MOUSE_COMERCIAR && xY[0] <= MAX0_MOUSE_COMERCIAR && xY[1] >= 0
@@ -417,7 +417,6 @@ public class Entidad {
 					    MenuInfoPersonaje.MENUBATALLAR);
 
 				}
-				// juego.getHandlerMouse().setNuevoClick(false);
 			    }
 			}
 		    }
@@ -447,23 +446,6 @@ public class Entidad {
 				juego.getEstadoJuego().setHaySolicitud(true,
 					juego.getPaquetesNpcs().get(actual.getIdEnemigo()),
 					MenuInfoPersonaje.MENUBATALLAR);
-
-				/*
-				 * PaqueteBatalla pBatalla = new
-				 * PaqueteBatalla();
-				 * pBatalla.setId(juego.getPersonaje().getId());
-				 * pBatalla.setIdEnemigo(actual.idEnemigo * -1);
-				 * juego.getPersonaje().setEstado(Estado.
-				 * estadoBatallaNpc); Estado.setEstado(null);
-				 * juego.setEstadoBatallaNpc(new
-				 * EstadoBatallaNpc(juego, pBatalla));
-				 * Estado.setEstado(juego.getEstadoBatallaNpc())
-				 * ; try {
-				 * juego.getCliente().getSalida().writeObject(
-				 * gson.toJson (pBatalla)); } catch (IOException
-				 * e) { JOptionPane.showMessageDialog(null,
-				 * "Fallo la conexión " + "con el servidor"); }
-				 */
 			    }
 			}
 		    }
@@ -474,11 +456,10 @@ public class Entidad {
 	}
 
 	if (juego.getHandlerMouse().getNuevoRecorrido() && !juego.getEstadoJuego().getHaySolicitud()) {
-	    
 	    InputStream in;
 	    try {
 		Random rm = new Random();
-		in = new FileInputStream("./recursos/Voz"+ (rm.nextInt(CANT_VOCES_PERSONAJE)+1) +".wav");
+		in = new FileInputStream("./recursos/Voz" + (rm.nextInt(CANT_VOCES_PERSONAJE) + 1) + ".wav");
 		AudioStream voz = new AudioStream(in);
 		AudioPlayer.player.start(voz);
 	    } catch (IOException e1) {

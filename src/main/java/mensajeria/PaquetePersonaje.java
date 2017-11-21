@@ -552,7 +552,7 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
     /**
      * @param multiplicadorFuerzaCheat the multiplicadorFuerzaCheat to set
      */
-    public void setMultiplicadorFuerzaCheat(double multiplicadorFuerzaCheat) {
+    public void setMultiplicadorFuerzaCheat(final double multiplicadorFuerzaCheat) {
         this.multiplicadorFuerzaCheat = multiplicadorFuerzaCheat;
     }
 
@@ -568,7 +568,7 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
      * Activa o desactiva la invulnerabilidad del personaje del paquete.
      * @param el valor de verdad a setear
      */
-    public void setInvulnerabilidad(boolean invulnerabilidadActivada) {
+    public void setInvulnerabilidad(final boolean invulnerabilidadActivada) {
         this.invulnerabilidadActivada = invulnerabilidadActivada;
     }
 
@@ -584,7 +584,7 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
      * Activa o desactiva la invisibilidad del personaje del paquete.
      * @param el valor de verdad a setear
      */
-    public void setInvisibilidad(boolean invisibilidadActivada) {
+    public void setInvisibilidad(final boolean invisibilidadActivada) {
         this.invisibilidadActivada = invisibilidadActivada;
     }
 
@@ -599,9 +599,8 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
 	/**
 	 * @param noclipActivado the noclipActivado to set
 	 */
-	public void setNoclipActivado(boolean noclipActivado) {
+	public void setNoclipActivado(final boolean noclipActivado) {
 		this.noclipActivado = noclipActivado;
 	}
     
 }
-
