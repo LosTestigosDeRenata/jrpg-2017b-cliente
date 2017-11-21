@@ -74,7 +74,7 @@ public class MenuInfoPersonaje {
      * @param y the y
      * @param personaje the personaje
      */
-    // A lo mejor más adelante conviene hacer un MenuInfoNpc
+
     public MenuInfoPersonaje(final int x, final int y, final Paquete personaje) {
 	this.x = x;
 	this.y = y;

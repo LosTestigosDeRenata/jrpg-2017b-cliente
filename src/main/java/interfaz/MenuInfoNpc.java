@@ -91,9 +91,6 @@ public class MenuInfoNpc {
 	    break;
 	default:
 	    break;
-	/*
-	 * case menuComerciar: graficarMenuComerciar(g); break;
-	 */
 	}
 
 	// muestro los botones
@@ -122,23 +119,7 @@ public class MenuInfoNpc {
 
     }
 
-    /*
-     * private void graficarMenuComerciar(Graphics g){ // muestro los nombres de
-     * los atributos g.setColor(Color.BLACK); Pantalla.centerString(g, new
-     * Rectangle(x, y + 200, menu.getWidth(), 0), personaje.getRaza());
-     * g.drawString("Casta: ", x + 30, y + 260); g.drawString("Nivel: ", x + 30,
-     * y + 290); g.drawString("Experiencia: ", x + 30, y + 320); // muestro los
-     * atributos g.setFont(new Font("Book Antiqua", 0, 20));
-     * g.drawString(personaje.getCasta(), x + 100, y + 260);
-     * g.drawString(personaje.getNivel() + " ", x + 100, y + 290);
-     * g.drawString(personaje.getExperiencia() + " / " +
-     * Personaje.getTablaDeNiveles()[personaje.getNivel() + 1], x + 150, y +
-     * 320); }
-     */
-
-
     /**
-     *
      * @param mouseX posicion x del puntero
      * @param mouseY posicion y del puntero
      * @return retorna si la posicion del click corresponde a la del boton
@@ -149,7 +130,6 @@ public class MenuInfoNpc {
     }
 
     /**
-     *
      * @param mouseX posicion x del puntero
      * @param mouseY posicion Y del puntero
      * @return retorna si la posicion del click corresponde a la del boton cerrar
@@ -160,7 +140,6 @@ public class MenuInfoNpc {
     }
 
     /**
-    *
     * @param mouseX posicion x del puntero
     * @param mouseY posicion Y del puntero
     * @return retorna si la posicion del click corresponde a la del boton menu

@@ -41,8 +41,8 @@ public class EstadoBatalla extends Estado {
 
     private static final int MAX_ENERGIA = 10;
     private static final int X_IMAGEN_RECURSO = 175;
-    private static final int SIETE = 7;
-    private static final int TRES = 3;
+    private static final int FRAME_ENEMIGO = 7;
+    private static final int FRAME_PERSONAJE = 3;
     private static final int X_IMAGEN = 25;
     private static final int Y_IMAGEN = 5;
     private static final int Y_IMAGEN_ENEMY = 75;
@@ -221,9 +221,9 @@ public class EstadoBatalla extends Estado {
 	g.fillRect(0, 0, juego.getAncho(), juego.getAlto());
 	mundo.graficar(g);
 
-	g.drawImage(Recursos.getPersonaje().get(paquetePersonaje.getRaza()).get(TRES)[0], 0, X_IMAGEN_RECURSO,
+	g.drawImage(Recursos.getPersonaje().get(paquetePersonaje.getRaza()).get(FRAME_PERSONAJE)[0], 0, X_IMAGEN_RECURSO,
 		TAM_IMAGEN, TAM_IMAGEN, null);
-	g.drawImage(Recursos.getPersonaje().get(paqueteEnemigo.getRaza()).get(SIETE)[0], X_IMAGEN_ENEMY, Y_IMAGEN_ENEMY,
+	g.drawImage(Recursos.getPersonaje().get(paqueteEnemigo.getRaza()).get(FRAME_ENEMIGO)[0], X_IMAGEN_ENEMY, Y_IMAGEN_ENEMY,
 		TAM_IMAGEN, TAM_IMAGEN, null);
 
 	mundo.graficarObstaculos(g);
