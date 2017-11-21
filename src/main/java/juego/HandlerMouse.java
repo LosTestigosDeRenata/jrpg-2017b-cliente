@@ -19,10 +19,7 @@ public class HandlerMouse implements MouseListener {
 
     /** The nuevo click. */
     private boolean nuevoClick;
-    
-    /**
-     * Instantiates a new handler mouse.
-     */
+    /** Instantiates a new handler mouse. */
     public HandlerMouse() {
 	posMouse = new int[2];
 	posMouseRecorrido = new int[2];

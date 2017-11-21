@@ -312,7 +312,7 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
     /**
      * Subrutina de A�ade item
      * @param idItem parametro idItem
-     * @param nombre parametro nombre
+     * @param nombreItem parametro nombre
      * @param wearLocation parametro wearLocation
      * @param bonusSalud parametro bonusSalud
      * @param bonusEnergia parametro bonusEnergia
@@ -322,11 +322,12 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
      * @param foto parametro foto
      * @param fotoEquipado parametro fotoEquipado
      */
-    public final void anadirItem(final int idItem, final String nombre, final int wearLocation, final int bonusSalud,
+    public final void anadirItem(final int idItem,
+	    final String nombreItem, final int wearLocation, final int bonusSalud,
 	    final int bonusEnergia, final int bonusAtaque, final int bonusDefensa, final int bonusMagia,
 	    final String foto, final String fotoEquipado) {
 	try {
-	    items.add(new Item(idItem, nombre, wearLocation, bonusSalud, bonusEnergia, bonusAtaque, bonusDefensa,
+	    items.add(new Item(idItem, nombreItem, wearLocation, bonusSalud, bonusEnergia, bonusAtaque, bonusDefensa,
 		    bonusMagia, foto, fotoEquipado));
 	    useBonus(bonusSalud, bonusEnergia, bonusAtaque, bonusDefensa, bonusMagia);
 	} catch (final IOException e) {
@@ -546,14 +547,14 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
      * @return the multiplicadorFuerzaCheat
      */
     public double getMultiplicadorFuerzaCheat() {
-        return multiplicadorFuerzaCheat;
+	return multiplicadorFuerzaCheat;
     }
 
     /**
-     * @param multiplicadorFuerzaCheat the multiplicadorFuerzaCheat to set
+     * @param thatMultiplicadorFuerzaCheat the multiplicadorFuerzaCheat to set
      */
-    public void setMultiplicadorFuerzaCheat(final double multiplicadorFuerzaCheat) {
-        this.multiplicadorFuerzaCheat = multiplicadorFuerzaCheat;
+    public void setMultiplicadorFuerzaCheat(final double thatMultiplicadorFuerzaCheat) {
+	this.multiplicadorFuerzaCheat = thatMultiplicadorFuerzaCheat;
     }
 
     /**
@@ -561,15 +562,15 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
      * @return devuelve true si es invulnerable
      */
     public boolean esInvulnerable() {
-        return invulnerabilidadActivada;
+	return invulnerabilidadActivada;
     }
 
     /**
      * Activa o desactiva la invulnerabilidad del personaje del paquete.
-     * @param el valor de verdad a setear
+     * @param thatInvulnerabilidadActivada el valor de verdad a setear
      */
-    public void setInvulnerabilidad(final boolean invulnerabilidadActivada) {
-        this.invulnerabilidadActivada = invulnerabilidadActivada;
+    public void setInvulnerabilidad(final boolean thatInvulnerabilidadActivada) {
+	this.invulnerabilidadActivada = thatInvulnerabilidadActivada;
     }
 
     /**
@@ -577,30 +578,28 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
      * @return devuelve true si es invisible
      */
     public boolean esInvisible() {
-        return invisibilidadActivada;
+	return invisibilidadActivada;
     }
 
     /**
      * Activa o desactiva la invisibilidad del personaje del paquete.
-     * @param el valor de verdad a setear
+     * @param thatinvisibilidadActivada el valor de verdad a setear
      */
-    public void setInvisibilidad(final boolean invisibilidadActivada) {
-        this.invisibilidadActivada = invisibilidadActivada;
+    public void setInvisibilidad(final boolean thatinvisibilidadActivada) {
+	this.invisibilidadActivada = thatinvisibilidadActivada;
     }
 
-	/**
-	 * 
-	 * @return the noclipActivado
-	 */
-	public boolean isNoclipActivado() {
-		return noclipActivado;
-	}
+    /**
+     * @return the noclipActivado
+     */
+    public boolean isNoclipActivado() {
+	return noclipActivado;
+    }
 
-	/**
-	 * @param noclipActivado the noclipActivado to set
-	 */
-	public void setNoclipActivado(final boolean noclipActivado) {
-		this.noclipActivado = noclipActivado;
-	}
-    
+    /**
+     * @param noclipActivado the noclipActivado to set
+     */
+    public void setNoclipActivado(final boolean noclipActivado) {
+	this.noclipActivado = noclipActivado;
+    }
 }
