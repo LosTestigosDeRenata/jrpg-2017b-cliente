@@ -79,6 +79,8 @@ public class Cliente extends Thread {
 
     /**
      * Constructor del Cliente
+     * Se usa cuando no ingresan una IP
+     * Y toma la ip por defecto "localhost"
      */
     public Cliente() {
 
@@ -98,6 +100,29 @@ public class Cliente extends Thread {
 	    System.exit(1);
 	}
     }
+    
+    /**
+     * Constructor del Cliente
+     * @param ipMandada Mando la ip a la que quiero entrar
+     */
+    public Cliente(final String ipMandada) {
+
+	    ip = ipMandada;
+		try {
+		    Scanner sc = new Scanner(new File("config.txt"));
+		    sc.nextLine();
+		    puerto = sc.nextInt();
+		    sc.close();
+		    cliente = new Socket(ip, puerto);
+		    miIp = cliente.getInetAddress().getHostAddress();
+		    entrada = new ObjectInputStream(cliente.getInputStream());
+		    salida = new ObjectOutputStream(cliente.getOutputStream());
+		} catch (IOException e) {
+		    JOptionPane.showMessageDialog(null,
+			    "Fallo al iniciar la aplicación. (Cliente) " + "Revise la conexión con el servidor.");
+		    System.exit(1);
+		}
+	    }
 
     /**
      * Instantiates a new cliente.
