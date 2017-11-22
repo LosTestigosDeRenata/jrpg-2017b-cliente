@@ -123,12 +123,11 @@ public class MenuInicio extends JFrame {
 	    @Override
 	    public void actionPerformed(final ActionEvent e) {
 		Cliente cliente;
-		String conexion = JOptionPane.showInputDialog("Ingrese IP del servidor: (default localhost)");
+		String ip = JOptionPane.showInputDialog("Ingrese IP del servidor: (default localhost)");
 
-		if (conexion != null) {
-		    if (!conexion.equals("")) {
-			String[] dir = conexion.split(":");
-			cliente = new Cliente(dir[0], Integer.parseInt(dir[1]));
+		if (ip != null) {
+		    if (!ip.equals("")) {
+			cliente = new Cliente(ip);
 		    } else {
 			cliente = new Cliente();
 		    }
