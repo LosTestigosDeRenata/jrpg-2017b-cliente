@@ -114,11 +114,11 @@ package comandos;
 			
 	
 			if (!enemigo.estaVivo()) {
-				juego.getEstadoJuego().setHaySolicitud(true, juego.getPersonaje(), MenuInfoPersonaje.menuGanarBatalla);
+				juego.getEstadoJuego().setHaySolicitud(true, juego.getPersonaje(), MenuInfoPersonaje.MENUGANARBATALLA);
 				if(personaje.ganarExperiencia(enemigo.getNivel() * 40)){
 					juego.getPersonaje().setNivel(personaje.getNivel());
 					juego.getPersonaje().setPuntosSkill(personaje.getPuntosSkill());
-					juego.getEstadoJuego().setHaySolicitud(true, juego.getPersonaje(), MenuInfoPersonaje.menuSubirNivel);
+					juego.getEstadoJuego().setHaySolicitud(true, juego.getPersonaje(), MenuInfoPersonaje.MENUSUBIRNIVEL);
 				}
 				PaqueteFinalizarBatalla paqueteFinalizarBatalla = new PaqueteFinalizarBatalla();
 				paqueteFinalizarBatalla.setId(personaje.getIdPersonaje());
