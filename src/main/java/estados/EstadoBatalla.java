@@ -29,6 +29,7 @@ import mensajeria.Comando;
 import mensajeria.PaqueteAtacar;
 import mensajeria.PaqueteBatalla;
 import mensajeria.PaqueteFinalizarBatalla;
+import mensajeria.PaquetePelear;
 import mensajeria.PaquetePersonaje;
 import mundo.Mundo;
 import recursos.Recursos;
@@ -74,7 +75,7 @@ public class EstadoBatalla extends Estado {
     private final BufferedImage miniaturaPersonaje;
     private final BufferedImage miniaturaEnemigo;
 
-    public static final MenuBatalla menuBatalla;
+    public static MenuBatalla menuBatalla;
     public static PaquetePelear paquetePelear;
 
     /**
