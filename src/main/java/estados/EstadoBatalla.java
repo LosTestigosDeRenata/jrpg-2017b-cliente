@@ -96,9 +96,11 @@ public class EstadoBatalla extends Estado {
 	miniaturaEnemigo = Recursos.getPersonaje().get(enemigo.getNombreRaza()).get(Y_IMAGEN)[0];
 	miniaturaPersonaje = Recursos.getPersonaje().get(personaje.getNombreRaza()).get(Y_IMAGEN)[0];
 
+	/*
 	paqueteFinalizarBatalla = new PaqueteFinalizarBatalla();
 	paqueteFinalizarBatalla.setId(personaje.getIdPersonaje());
 	paqueteFinalizarBatalla.setIdEnemigo(enemigo.getIdPersonaje());
+	*/
 
 	// por defecto batalla perdida
 	juego.getEstadoJuego().setHaySolicitud(true, juego.getPersonaje(), MenuInfoPersonaje.MENUPERDERBATALLA);
