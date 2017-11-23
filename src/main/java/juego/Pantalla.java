@@ -13,6 +13,10 @@ import java.awt.event.WindowEvent;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.Rectangle2D;
 import java.io.IOException;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -64,6 +68,9 @@ public class Pantalla {
 
     /** The gson. */
     private final Gson gson = new Gson();
+    
+    /** Mapa de keys **/
+    private Map<Integer, Class<?>> mapaKeys;
 
     /**
      * Instantiates a new pantalla.
@@ -104,7 +111,7 @@ public class Pantalla {
 	    @Override
 	    public void keyReleased(final KeyEvent e) {
 		if (Estado.getEstado().esEstadoDeJuego()) {
-		    if (e.getKeyCode() == KeyEvent.VK_I && menuInventario == null) {
+		    /*if (e.getKeyCode() == KeyEvent.VK_I && menuInventario == null) {
 			menuInventario = new MenuInventario(cliente);
 			menuInventario.setVisible(true);
 		    }
@@ -123,6 +130,17 @@ public class Pantalla {
 		    if (e.getKeyCode() == KeyEvent.VK_C && ventContac == null) {
 			ventContac = new VentanaContactos(cliente.getJuego());
 			ventContac.setVisible(true);
+		    }*/
+		    Class<?> ventana = mapaKeys.get(e.getKeyCode());
+		    if (ventana != null) {
+			try {
+			    Constructor<?> constructor = ventana.getConstructor(Cliente.class);
+			    constructor.newInstance(new Object[] { cliente });
+			} catch (NoSuchMethodException | SecurityException | InstantiationException 
+				| IllegalAccessException | IllegalArgumentException 
+				| InvocationTargetException e1) {
+			    e1.printStackTrace();
+			}
 		    }
 		}
 	    }
@@ -140,6 +158,18 @@ public class Pantalla {
 
 	pantalla.add(canvas);
 	pantalla.pack();
+	
+	// Mapeo las teclas del teclado con sus respectivos menues
+	mapaKeys = new HashMap<Integer, Class<?>>();
+	try {
+	    mapaKeys.put(KeyEvent.VK_I, Class.forName("frames.MenuInventario"));
+	    mapaKeys.put(KeyEvent.VK_A, Class.forName("frames.MenuAsignarSkills"));
+	    mapaKeys.put(KeyEvent.VK_S, Class.forName("frames.MenuStats"));
+	    mapaKeys.put(KeyEvent.VK_ESCAPE, Class.forName("frames.MenuEscape"));
+	    mapaKeys.put(KeyEvent.VK_C, Class.forName("chat.VentanaContactos"));
+	} catch (ClassNotFoundException e) {
+	    e.printStackTrace();
+	}
     }
 
     /**

@@ -71,6 +71,9 @@ public class MenuStats extends JFrame {
      * @param cliente cliente sobre el cual construye el menu
      */
     public MenuStats(final Cliente cliente) {
+	if (Pantalla.menuStats != null) {
+	    Pantalla.menuStats.dispose();
+	}
 	paquetePersonaje = cliente.getPaquetePersonaje();
 
 	this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
@@ -78,7 +81,9 @@ public class MenuStats extends JFrame {
 	this.setBounds(FIL4_BTN_GENERICO, FIL4_BTN_GENERICO, ANCHO_MENU, ALTO_MENU);
 	this.setLocationRelativeTo(null);
 	this.setTitle("Estadísticas");
-
+	Pantalla.menuStats = this;
+	this.setVisible(true);
+	
 	contentPane = new JPanel();
 	contentPane.setBorder(new EmptyBorder(BORDER, BORDER, BORDER, BORDER));
 	setContentPane(contentPane);

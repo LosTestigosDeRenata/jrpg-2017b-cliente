@@ -31,6 +31,9 @@ public class MenuInventario extends JFrame {
      * @param cliente cliente que ingresa al menu Inventario
      */
     public MenuInventario(final Cliente cliente) {
+	if (Pantalla.menuInventario != null) {
+	    Pantalla.menuInventario.dispose();
+	}
 	cancelar.addActionListener(new ActionListener() {
 	    @Override
 	    public void actionPerformed(final ActionEvent e) {
@@ -62,5 +65,6 @@ public class MenuInventario extends JFrame {
 	this.setLocation(X_LOCACION, Y_LOCACION);
 	this.setResizable(false);
 	this.setVisible(true);
+	Pantalla.menuInventario = this;
     }
 }

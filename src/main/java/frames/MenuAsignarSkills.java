@@ -98,6 +98,9 @@ public class MenuAsignarSkills extends JFrame {
      * @param cliente cliente que se obtendra los puntos
      */
     public MenuAsignarSkills(final Cliente cliente) {
+	if (Pantalla.menuAsignar  != null) {
+	    Pantalla.menuAsignar.dispose();
+	}
 	puntosAsignarInicial = cliente.getPaquetePersonaje().getPuntosSkill();
 	puntosFuerzaInicial = cliente.getPaquetePersonaje().getFuerza();
 	puntosDestrezaInicial = cliente.getPaquetePersonaje().getDestreza();
@@ -106,6 +109,8 @@ public class MenuAsignarSkills extends JFrame {
 	puntosFuerza = puntosFuerzaInicial;
 	puntosDestreza = puntosDestrezaInicial;
 	puntosInteligencia = puntosInteligenciaInicial;
+	Pantalla.menuAsignar = this;
+	this.setVisible(true);
 
 	setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 	setBounds(X_MENUASIGNAR, X_MENUASIGNAR, ANCHO_MENU, ALTO_MENU);
@@ -118,7 +123,6 @@ public class MenuAsignarSkills extends JFrame {
 	setBounds(X_MENUASIGNAR, X_MENUASIGNAR, ANCHO_IMAGEN, ALTO_IMAGEN);
 
 	getContentPane().setLayout(null);
-	setVisible(true);
 	setLocationRelativeTo(null);
 	setResizable(false);
 	setLocationRelativeTo(null);

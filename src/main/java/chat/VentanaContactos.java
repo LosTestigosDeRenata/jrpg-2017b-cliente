@@ -19,6 +19,7 @@ import javax.swing.JScrollPane;
 import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 
+import cliente.Cliente;
 import juego.Juego;
 import juego.Pantalla;
 import mensajeria.PaquetePersonaje;
@@ -75,16 +76,28 @@ public class VentanaContactos extends JFrame {
     private JLabel background;
 
     /**
-     * Instantiates a new ventana contactos.
-     * @param juego the juego
+     * Instancia una ventana de contactos
+     * @param cliente el cliente del juego que instanció la ventana
+     */
+    public VentanaContactos(final Cliente cliente) {
+	this(cliente.getJuego());
+    }
+    /**
+     * Instancia una ventana de contactos
+     * @param juego el juego del cliente que instanció la ventana
      */
     public VentanaContactos(final Juego juego) {
+	if (Pantalla.ventContac != null) {
+	    Pantalla.ventContac.dispose();
+	}
 	setResizable(false);
 	setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 	setBounds(X_VENTANA, Y_VENTANA, ANCHO_VENTANA, ALTO_VENTANA);
 	setLocationRelativeTo(null);
 	setTitle("Usuarios");
-
+	Pantalla.ventContac = this;
+	this.setVisible(true);
+	
 	contentPane = new JPanel();
 	contentPane.setBorder(new EmptyBorder(BORDE, BORDE, BORDE, BORDE));
 	setContentPane(contentPane);
@@ -107,7 +120,6 @@ public class VentanaContactos extends JFrame {
 	botonMc.addActionListener(new ActionListener() {
 	    @Override
 	    public void actionPerformed(final ActionEvent e) {
-//		if (modelo.size() != 0) {
 		    if (!juego.getChatsActivos().containsKey("Sala")) {
 			MiChat chat = new MiChat(juego);
 			juego.getChatsActivos().put("Sala", chat);
@@ -116,7 +128,6 @@ public class VentanaContactos extends JFrame {
 			botonMc.setEnabled(false);
 		    }
 		}
-//	    }
 	});
 	botonMc.setBounds(X_BOTONMC, Y_BOTONMC, ANCHO_BOTONMC, ALTO_BOTONMC);
 	contentPane.add(botonMc);

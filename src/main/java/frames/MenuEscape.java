@@ -67,11 +67,16 @@ public class MenuEscape extends JFrame {
      * @param cliente cliente que ingresa al menu
      */
     public MenuEscape(final Cliente cliente) {
+	if (Pantalla.menuEscp != null) {
+	    Pantalla.menuEscp.dispose();
+	}
 	this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 	this.setUndecorated(true);
 	this.setResizable(false);
 	this.setBounds(X_MENU, Y_MENU, ANCHO_MENU, ALTO_MENU);
 	this.setLocationRelativeTo(null);
+	Pantalla.menuEscp = this;
+	this.setVisible(true);
 
 	contentPane = new JPanel();
 	contentPane.setBorder(new EmptyBorder(BORDER, BORDER, BORDER, BORDER));
