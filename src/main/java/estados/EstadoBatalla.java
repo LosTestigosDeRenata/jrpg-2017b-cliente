@@ -381,20 +381,20 @@ public class EstadoBatalla extends Estado {
     /**
      * Finalizar batalla.
      */
-    private void finalizarBatalla() {
-	try {
-	    juego.getCliente().getSalida().writeObject(gson.toJson(paqueteFinalizarBatalla));
-	    paquetePersonaje.setSaludTope(personaje.getSaludTope());
-	    paquetePersonaje.setEnergiaTope(personaje.getEnergiaTope());
-	    paquetePersonaje.setExperiencia(personaje.getExperiencia());
-	    paquetePersonaje.setNivel(personaje.getNivel());
-	    paquetePersonaje.setPuntosSkill(personaje.getPuntosSkill());
-	    paquetePersonaje.removerBonus();
-	    paquetePersonaje.setComando(Comando.ACTUALIZARPERSONAJE);
-	    juego.getCliente().getSalida().writeObject(gson.toJson(paquetePersonaje));
-	} catch (final IOException e) {
-	    JOptionPane.showMessageDialog(null, "Fallo la conexión con el servidor");
-	}
+    public void finalizarBatalla(PaqueteFinalizarBatalla paqueteFinalizarBatalla) {
+		try {
+		    juego.getCliente().getSalida().writeObject(gson.toJson(paqueteFinalizarBatalla));
+		    paquetePersonaje.setSaludTope(personaje.getSaludTope());
+		    paquetePersonaje.setEnergiaTope(personaje.getEnergiaTope());
+		    paquetePersonaje.setExperiencia(personaje.getExperiencia());
+		    paquetePersonaje.setNivel(personaje.getNivel());
+		    paquetePersonaje.setPuntosSkill(personaje.getPuntosSkill());
+		    paquetePersonaje.removerBonus();
+		    paquetePersonaje.setComando(Comando.ACTUALIZARPERSONAJE);
+		    juego.getCliente().getSalida().writeObject(gson.toJson(paquetePersonaje));
+		} catch (final IOException e) {
+		    JOptionPane.showMessageDialog(null, "Fallo la conexión con el servidor");
+		}
     }
 
     /**
