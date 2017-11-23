@@ -122,97 +122,106 @@ public class EstadoBatalla extends Estado {
 	if (miTurno) {
 
 	    if (juego.getHandlerMouse().getNuevoClick()) {
-		posMouse = juego.getHandlerMouse().getPosMouse();
-
-		if (menuBatalla.clickEnMenu(posMouse[0], posMouse[1])) {
-
-		    if (menuBatalla.getBotonClickeado(posMouse[0], posMouse[1]) == 1) {
-			if (personaje.puedeAtacar()) {
-			    seRealizoAccion = true;
-			    personaje.habilidadRaza1(enemigo);
+			posMouse = juego.getHandlerMouse().getPosMouse();
+	
+			if (menuBatalla.clickEnMenu(posMouse[0], posMouse[1])) {
+	
+			    if (menuBatalla.getBotonClickeado(posMouse[0], posMouse[1]) == 1) {
+					if (personaje.puedeAtacar()) {
+					    seRealizoAccion = true;
+					    //personaje.habilidadRaza1(enemigo);
+					    paquetePelear.setAccion("hr1");
+					}
+					haySpellSeleccionada = true;
+			    }
+	
+			    if (menuBatalla.getBotonClickeado(posMouse[0], posMouse[1]) == 2) {
+					if (personaje.puedeAtacar()) {
+					    seRealizoAccion = true;
+					    //personaje.habilidadRaza2(enemigo);
+					    paquetePelear.setAccion("hr2");
+					}
+					haySpellSeleccionada = true;
+			    }
+	
+			    if (menuBatalla.getBotonClickeado(posMouse[0], posMouse[1]) == HABLIDIAD_3) {
+					if (personaje.puedeAtacar()) {
+					    seRealizoAccion = true;
+					    //personaje.habilidadCasta1(enemigo);
+					    paquetePelear.setAccion("hc1");
+					}
+					haySpellSeleccionada = true;
+			    }
+	
+			    if (menuBatalla.getBotonClickeado(posMouse[0], posMouse[1]) == HABILIDAD_4) {
+					if (personaje.puedeAtacar()) {
+					    seRealizoAccion = true;
+					    //personaje.habilidadCasta2(enemigo);
+					    paquetePelear.setAccion("hc2");
+					}
+					haySpellSeleccionada = true;
+			    }
+	
+			    if (menuBatalla.getBotonClickeado(posMouse[0], posMouse[1]) == HABILIDAD_5) {
+					if (personaje.puedeAtacar()) {
+					    seRealizoAccion = true;
+					    //personaje.habilidadCasta3(enemigo);
+					    paquetePelear.setAccion("hc3");
+					}
+					haySpellSeleccionada = true;
+			    }
+	
+			    if (menuBatalla.getBotonClickeado(posMouse[0], posMouse[1]) == HABILIDAD_6) {
+					seRealizoAccion = true;
+					//personaje.serEnergizado(MAX_ENERGIA);
+					paquetePelear.setAccion("energizar");
+					haySpellSeleccionada = true;
+			    }
 			}
-			haySpellSeleccionada = true;
-		    }
-
-		    if (menuBatalla.getBotonClickeado(posMouse[0], posMouse[1]) == 2) {
-			if (personaje.puedeAtacar()) {
-			    seRealizoAccion = true;
-			    personaje.habilidadRaza2(enemigo);
+	
+			if (haySpellSeleccionada && seRealizoAccion) {
+				enviarAtaque(paquetePelear);
+				/*
+			    if (!enemigo.estaVivo()) {
+				juego.getEstadoJuego().setHaySolicitud(true, juego.getPersonaje(),
+					MenuInfoPersonaje.MENUGANARBATALLA);
+	
+				if (personaje.ganarExperiencia(enemigo.getNivel() * MULTIPILCADOR_EXP)) {
+				    juego.getPersonaje().setNivel(personaje.getNivel());
+				    juego.getPersonaje().setPuntosSkill(personaje.getPuntosSkill());
+				    juego.getEstadoJuego().setHaySolicitud(true, juego.getPersonaje(),
+					    MenuInfoPersonaje.MENUSUBIRNIVEL);
+				}
+				paqueteFinalizarBatalla.setGanadorBatalla(juego.getPersonaje().getId());
+				finalizarBatalla();
+				Estado.setEstado(juego.getEstadoJuego());
+	
+				InputStream in;
+				try {
+				    in = new FileInputStream("./recursos/Victoria.wav");
+				    AudioStream win = new AudioStream(in);
+				    AudioPlayer.player.start(win);
+				} catch (IOException e1) {
+				    e1.printStackTrace();
+				}
+	
+			    } else {
+				paqueteAtacar = new PaqueteAtacar(paquetePersonaje.getId(), paqueteEnemigo.getId(),
+					personaje.getSalud(), personaje.getEnergia(), enemigo.getSalud(), enemigo.getEnergia(),
+					personaje.getDefensa(), enemigo.getDefensa(),
+					personaje.getCasta().getProbabilidadEvitarDanio(),
+					enemigo.getCasta().getProbabilidadEvitarDanio());
+				enviarAtaque(paqueteAtacar);
+				miTurno = false;
+				menuBatalla.setHabilitado(false);
+			    }
+			    */
+			} else if (haySpellSeleccionada && !seRealizoAccion) {
+			    JOptionPane.showMessageDialog(null,
+				    "No posees la energía suficiente para realizar esta habilidad.");
 			}
-			haySpellSeleccionada = true;
-		    }
-
-		    if (menuBatalla.getBotonClickeado(posMouse[0], posMouse[1]) == HABLIDIAD_3) {
-			if (personaje.puedeAtacar()) {
-			    seRealizoAccion = true;
-			    personaje.habilidadCasta1(enemigo);
-			}
-			haySpellSeleccionada = true;
-		    }
-
-		    if (menuBatalla.getBotonClickeado(posMouse[0], posMouse[1]) == HABILIDAD_4) {
-			if (personaje.puedeAtacar()) {
-			    seRealizoAccion = true;
-			    personaje.habilidadCasta2(enemigo);
-			}
-			haySpellSeleccionada = true;
-		    }
-
-		    if (menuBatalla.getBotonClickeado(posMouse[0], posMouse[1]) == HABILIDAD_5) {
-			if (personaje.puedeAtacar()) {
-			    seRealizoAccion = true;
-			    personaje.habilidadCasta3(enemigo);
-			}
-			haySpellSeleccionada = true;
-		    }
-
-		    if (menuBatalla.getBotonClickeado(posMouse[0], posMouse[1]) == HABILIDAD_6) {
-			seRealizoAccion = true;
-			personaje.serEnergizado(MAX_ENERGIA);
-			haySpellSeleccionada = true;
-		    }
-		}
-
-		if (haySpellSeleccionada && seRealizoAccion) {
-		    if (!enemigo.estaVivo()) {
-			juego.getEstadoJuego().setHaySolicitud(true, juego.getPersonaje(),
-				MenuInfoPersonaje.MENUGANARBATALLA);
-
-			if (personaje.ganarExperiencia(enemigo.getNivel() * MULTIPILCADOR_EXP)) {
-			    juego.getPersonaje().setNivel(personaje.getNivel());
-			    juego.getPersonaje().setPuntosSkill(personaje.getPuntosSkill());
-			    juego.getEstadoJuego().setHaySolicitud(true, juego.getPersonaje(),
-				    MenuInfoPersonaje.MENUSUBIRNIVEL);
-			}
-			paqueteFinalizarBatalla.setGanadorBatalla(juego.getPersonaje().getId());
-			finalizarBatalla();
-			Estado.setEstado(juego.getEstadoJuego());
-
-			InputStream in;
-			try {
-			    in = new FileInputStream("./recursos/Victoria.wav");
-			    AudioStream win = new AudioStream(in);
-			    AudioPlayer.player.start(win);
-			} catch (IOException e1) {
-			    e1.printStackTrace();
-			}
-
-		    } else {
-			paqueteAtacar = new PaqueteAtacar(paquetePersonaje.getId(), paqueteEnemigo.getId(),
-				personaje.getSalud(), personaje.getEnergia(), enemigo.getSalud(), enemigo.getEnergia(),
-				personaje.getDefensa(), enemigo.getDefensa(),
-				personaje.getCasta().getProbabilidadEvitarDanio(),
-				enemigo.getCasta().getProbabilidadEvitarDanio());
-			enviarAtaque(paqueteAtacar);
-			miTurno = false;
-			menuBatalla.setHabilitado(false);
-		    }
-		} else if (haySpellSeleccionada && !seRealizoAccion) {
-		    JOptionPane.showMessageDialog(null,
-			    "No posees la energía suficiente para realizar esta habilidad.");
-		}
-
-		juego.getHandlerMouse().setNuevoClick(false);
+	
+			juego.getHandlerMouse().setNuevoClick(false);
 	    }
 	}
 
