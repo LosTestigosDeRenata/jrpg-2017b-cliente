@@ -7,6 +7,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
@@ -252,65 +253,117 @@ public class EstadoBatalla extends Estado {
      * Crear personajes.
      */
     private void crearPersonajes() {
-	String nombre = paquetePersonaje.getNombre();
-	int salud = paquetePersonaje.getSaludTope();
-	int energia = paquetePersonaje.getEnergiaTope();
-	int fuerza = (int) (paquetePersonaje.getFuerza() * paquetePersonaje.getMultiplicadorFuerzaCheat());
-	int destreza = paquetePersonaje.getDestreza();
-	int inteligencia = paquetePersonaje.getInteligencia();
-	int experiencia = paquetePersonaje.getExperiencia();
-	int nivel = paquetePersonaje.getNivel();
-	int id = paquetePersonaje.getId();
+    	String raza = paquetePersonaje.getRaza();
+		String nombre = paquetePersonaje.getNombre();
+		int salud = paquetePersonaje.getSaludTope();
+		int energia = paquetePersonaje.getEnergiaTope();
+		int fuerza = (int) (paquetePersonaje.getFuerza() * paquetePersonaje.getMultiplicadorFuerzaCheat());
+		int destreza = paquetePersonaje.getDestreza();
+		int inteligencia = paquetePersonaje.getInteligencia();
+		int experiencia = paquetePersonaje.getExperiencia();
+		int nivel = paquetePersonaje.getNivel();
+		int id = paquetePersonaje.getId();
+		int saludTope = paquetePersonaje.getSaludTope();
+		int energiaTope = paquetePersonaje.getEnergiaTope();
+		
+		ArrayList<String> personajeAtacante = new ArrayList<>();
+		personajeAtacante.add(raza);
+		personajeAtacante.add(nombre);
+		personajeAtacante.add(String.valueOf(salud));
+		personajeAtacante.add(String.valueOf(energia));
+		personajeAtacante.add(String.valueOf(fuerza));
+		personajeAtacante.add(String.valueOf(destreza));
+		personajeAtacante.add(String.valueOf(inteligencia));
+		personajeAtacante.add(String.valueOf(experiencia));
+		personajeAtacante.add(String.valueOf(nivel));
+		personajeAtacante.add(String.valueOf(id));
+		personajeAtacante.add(String.valueOf(saludTope));
+		personajeAtacante.add(String.valueOf(energiaTope));
 
-	Casta casta = null;
-	try {
-	    casta = (Casta) Class.forName("dominio" + "." + paquetePersonaje.getCasta()).newInstance();
-	    personaje = (Personaje) Class.forName("dominio" + "." + paquetePersonaje.getRaza())
-		    .getConstructor(String.class, Integer.TYPE, Integer.TYPE, Integer.TYPE, Integer.TYPE, Integer.TYPE,
-			    Casta.class, Integer.TYPE, Integer.TYPE, Integer.TYPE)
-		    .newInstance(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, id);
-	    personaje.setPuntosSkill(paquetePersonaje.getPuntosSkill());
-	} catch (InstantiationException | IllegalAccessException | ClassNotFoundException | IllegalArgumentException
-		| InvocationTargetException | NoSuchMethodException | SecurityException e) {
-	    JOptionPane.showMessageDialog(null, "Error al crear la batalla");
-	}
-	// cheats
-	personaje.setInvulnerabilidad(paquetePersonaje.esInvulnerable());
-
-	nombre = paqueteEnemigo.getNombre();
-	salud = paqueteEnemigo.getSaludTope();
-	energia = paqueteEnemigo.getEnergiaTope();
-	fuerza = (int) (paqueteEnemigo.getFuerza() * paqueteEnemigo.getMultiplicadorFuerzaCheat());
-	destreza = paqueteEnemigo.getDestreza();
-	inteligencia = paqueteEnemigo.getInteligencia();
-	experiencia = paqueteEnemigo.getExperiencia();
-	nivel = paqueteEnemigo.getNivel();
-	id = paqueteEnemigo.getId();
-
-	casta = null;
-	if (paqueteEnemigo.getCasta().equals("Guerrero")) {
-	    casta = new Guerrero();
-	} else if (paqueteEnemigo.getCasta().equals("Hechicero")) {
-	    casta = new Hechicero();
-	} else if (paqueteEnemigo.getCasta().equals("Asesino")) {
-	    casta = new Asesino();
-	}
-
-	if (paqueteEnemigo.getRaza().equals("Humano")) {
-	    enemigo = new Humano(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, id);
-	} else if (paqueteEnemigo.getRaza().equals("Orco")) {
-	    enemigo = new Orco(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, id);
-	} else if (paqueteEnemigo.getRaza().equals("Elfo")) {
-	    enemigo = new Elfo(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, id);
-	}
-	enemigo.setInvulnerabilidad(paqueteEnemigo.esInvulnerable());
-
-	// si ambos personajes son invulnerables, los vuelvo a hacer vulnerables
-	// en la batalla
-	if (personaje.esInvulnerable() && enemigo.esInvulnerable()) {
-	    personaje.setInvulnerabilidad(false);
-	    enemigo.setInvulnerabilidad(false);
-	}
+		
+		ArrayList<String> castaAtacante = new ArrayList<>();
+	
+		Casta casta = null;
+		try {
+		    casta = (Casta) Class.forName("dominio" + "." + paquetePersonaje.getCasta()).newInstance();
+		    personaje = (Personaje) Class.forName("dominio" + "." + paquetePersonaje.getRaza())
+			    .getConstructor(String.class, Integer.TYPE, Integer.TYPE, Integer.TYPE, Integer.TYPE, Integer.TYPE,
+				    Casta.class, Integer.TYPE, Integer.TYPE, Integer.TYPE)
+			    .newInstance(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, id);
+		    personaje.setPuntosSkill(paquetePersonaje.getPuntosSkill());
+		    
+		    castaAtacante.add(casta.getClass().getSimpleName());
+			castaAtacante.add(String.valueOf(casta.getProbabilidadGolpeCritico()));
+			castaAtacante.add(String.valueOf(casta.getProbabilidadEvitarDanio()));
+			castaAtacante.add(String.valueOf(casta.getDanioCritico()));
+		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException | IllegalArgumentException
+			| InvocationTargetException | NoSuchMethodException | SecurityException e) {
+		    JOptionPane.showMessageDialog(null, "Error al crear la batalla");
+		}
+		// cheats
+		personaje.setInvulnerabilidad(paquetePersonaje.esInvulnerable());
+	
+		raza = paqueteEnemigo.getRaza();
+		nombre = paqueteEnemigo.getNombre();
+		salud = paqueteEnemigo.getSaludTope();
+		energia = paqueteEnemigo.getEnergiaTope();
+		fuerza = (int) (paqueteEnemigo.getFuerza() * paqueteEnemigo.getMultiplicadorFuerzaCheat());
+		destreza = paqueteEnemigo.getDestreza();
+		inteligencia = paqueteEnemigo.getInteligencia();
+		experiencia = paqueteEnemigo.getExperiencia();
+		nivel = paqueteEnemigo.getNivel();
+		id = paqueteEnemigo.getId();
+		saludTope = paqueteEnemigo.getSaludTope();
+		energiaTope = paqueteEnemigo.getEnergiaTope();
+		
+		ArrayList<String> personajeEnemigo = new ArrayList<>();
+		personajeEnemigo.add(raza);
+		personajeEnemigo.add(nombre);
+		personajeEnemigo.add(String.valueOf(salud));
+		personajeEnemigo.add(String.valueOf(energia));
+		personajeEnemigo.add(String.valueOf(fuerza));
+		personajeEnemigo.add(String.valueOf(destreza));
+		personajeEnemigo.add(String.valueOf(inteligencia));
+		personajeEnemigo.add(String.valueOf(experiencia));
+		personajeEnemigo.add(String.valueOf(nivel));
+		personajeEnemigo.add(String.valueOf(id));
+		personajeEnemigo.add(String.valueOf(saludTope));
+		personajeEnemigo.add(String.valueOf(energiaTope));
+	
+		casta = null;
+		if (paqueteEnemigo.getCasta().equals("Guerrero")) {
+		    casta = new Guerrero();
+		} else if (paqueteEnemigo.getCasta().equals("Hechicero")) {
+		    casta = new Hechicero();
+		} else if (paqueteEnemigo.getCasta().equals("Asesino")) {
+		    casta = new Asesino();
+		}
+		
+		ArrayList<String> castaEnemigo = new ArrayList<>();
+		castaEnemigo.add(casta.getClass().getSimpleName());
+		castaEnemigo.add(String.valueOf(casta.getProbabilidadGolpeCritico()));
+		castaEnemigo.add(String.valueOf(casta.getProbabilidadEvitarDanio()));
+		castaEnemigo.add(String.valueOf(casta.getDanioCritico()));
+	
+		if (paqueteEnemigo.getRaza().equals("Humano")) {
+		    enemigo = new Humano(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, id);
+		} else if (paqueteEnemigo.getRaza().equals("Orco")) {
+		    enemigo = new Orco(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, id);
+		} else if (paqueteEnemigo.getRaza().equals("Elfo")) {
+		    enemigo = new Elfo(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, id);
+		}
+		
+		paquetePelear = new PaquetePelear(personajeAtacante, personajeEnemigo, castaAtacante, castaEnemigo, null);
+		
+		
+		enemigo.setInvulnerabilidad(paqueteEnemigo.esInvulnerable());
+	
+		// si ambos personajes son invulnerables, los vuelvo a hacer vulnerables
+		// en la batalla
+		if (personaje.esInvulnerable() && enemigo.esInvulnerable()) {
+		    personaje.setInvulnerabilidad(false);
+		    enemigo.setInvulnerabilidad(false);
+		}
     }
 
     /**
