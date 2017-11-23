@@ -443,4 +443,12 @@ public class EstadoBatalla extends Estado {
     public boolean esEstadoDeJuego() {
 	return false;
     }
+    
+	public void setPersonaje(Personaje personaje) {
+		this.personaje = personaje;
+	}
+
+	public void setEnemigo(Personaje enemigo) {
+		this.enemigo = enemigo;
+	}
 }
