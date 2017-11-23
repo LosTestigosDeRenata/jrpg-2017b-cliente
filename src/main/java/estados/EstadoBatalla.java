@@ -370,9 +370,9 @@ public class EstadoBatalla extends Estado {
      * Enviar ataque.
      * @param paqueteAtacarParam the paquete atacar
      */
-    public void enviarAtaque(final PaqueteAtacar paqueteAtacarParam) {
+    public void enviarAtaque(final PaquetePelear paquetePelear) {
 	try {
-	    juego.getCliente().getSalida().writeObject(gson.toJson(paqueteAtacarParam));
+	    juego.getCliente().getSalida().writeObject(gson.toJson(paquetePelear));
 	} catch (final IOException e) {
 	    JOptionPane.showMessageDialog(null, "Fallo la conexion con el servidor.");
 	}
