@@ -59,11 +59,11 @@ public class EstadoBatalla extends Estado {
     private Personaje personaje;
     private Personaje enemigo;
     private int[] posMouse;
-    private final PaquetePersonaje paquetePersonaje;
-    private final PaquetePersonaje paqueteEnemigo;
-    private PaqueteAtacar paqueteAtacar;
-    private final PaqueteFinalizarBatalla paqueteFinalizarBatalla;
-    private boolean miTurno;
+    public static PaquetePersonaje paquetePersonaje;
+    public static PaquetePersonaje paqueteEnemigo;
+    //private PaqueteAtacar paqueteAtacar;
+    //private final PaqueteFinalizarBatalla paqueteFinalizarBatalla;
+    public static boolean miTurno;
 
     private boolean haySpellSeleccionada;
     private boolean seRealizoAccion;
@@ -73,7 +73,8 @@ public class EstadoBatalla extends Estado {
     private final BufferedImage miniaturaPersonaje;
     private final BufferedImage miniaturaEnemigo;
 
-    private final MenuBatalla menuBatalla;
+    public static final MenuBatalla menuBatalla;
+    public static PaquetePelear paquetePelear;
 
     /**
      * Instantiates a new estado batalla.
