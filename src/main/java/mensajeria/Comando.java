@@ -18,14 +18,14 @@ public abstract class Comando {
 			"Batalla", "Atacar", "FinalizarBatalla",
 			"ActualizarPersonaje", "ActualizarPersonajeLvl",
 			"ActualizarInventario", "Comercio", "ActualizarComercio",
-			"Trueque", "ActualizarTrueque", "Talk", "ActualizarNpcs", "Nada", "NoWall", "Cheat"};
+			"Trueque", "ActualizarTrueque", "Talk", "ActualizarNpcs", "Nada", "NoWall", "Cheat", "Atacado"};
 	public static final String[] CLASSNAMESBIS = {
 			"Conexion", "CrearPersonaje", "Desconectar",
 			"InicioSesionSet", "MostrarMapas", "Movimiento",
 			"RegistroSet", "SalirSet", "Batalla", "Atacar",
 			"FinalizarBatalla", "ActualizarPersonaje", "ActualizarPersonajeLvl",
 			"ActualizarInventario", "Comercio", "ActualizarComercio",
-			"Trueque", "ActualizarTrueque", "Talk", "ActualizarNpcs", "Nada", "NoWall", "Cheat"};
+			"Trueque", "ActualizarTrueque", "Talk", "ActualizarNpcs", "Nada", "NoWall", "Cheat", "Atacado"};
 
 	public static final int CONEXION = 0;
 	public static final int CREACIONPJ = 1;
@@ -50,6 +50,7 @@ public abstract class Comando {
 	public static final int NADA = 20;
 	public static final int NOWALL = 21;
 	public static final int CHEAT = 22;
+	public static final int ATACADO = 23;
 
 	protected final Gson gson = new Gson();
 	protected String cadenaLeida;
