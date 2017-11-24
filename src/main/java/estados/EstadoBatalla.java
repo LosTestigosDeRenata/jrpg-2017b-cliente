@@ -48,6 +48,8 @@ public class EstadoBatalla extends Estado {
     private static final int HABILIDAD_5 = Y_IMAGEN;
     private static final int HABILIDAD_4 = 4;
     private static final int HABLIDIAD_3 = 3;
+	private static final int HABLIDIAD_2 = 2;
+	private static final int HABLIDIAD_1 = 1;
     private static final int Y_OFFSET = 150;
     private static final int X_OFFSET = -350;
     private final Mundo mundo;
@@ -113,7 +115,7 @@ public class EstadoBatalla extends Estado {
 
 		if (menuBatalla.clickEnMenu(posMouse[0], posMouse[1])) {
 
-		    if (menuBatalla.getBotonClickeado(posMouse[0], posMouse[1]) == 1) {
+		    if (menuBatalla.getBotonClickeado(posMouse[0], posMouse[1]) == HABLIDIAD_1) {
 			if (personaje.puedeAtacar()) {
 			    seRealizoAccion = true;
 			    paquetePelear.setAccion("hr1");
@@ -121,7 +123,7 @@ public class EstadoBatalla extends Estado {
 			haySpellSeleccionada = true;
 		    }
 
-		    if (menuBatalla.getBotonClickeado(posMouse[0], posMouse[1]) == 2) {
+		    if (menuBatalla.getBotonClickeado(posMouse[0], posMouse[1]) == HABLIDIAD_2) {
 			if (personaje.puedeAtacar()) {
 			    seRealizoAccion = true;
 			    paquetePelear.setAccion("hr2");
