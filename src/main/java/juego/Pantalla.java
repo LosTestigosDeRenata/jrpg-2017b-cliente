@@ -111,21 +111,6 @@ public class Pantalla {
 	    @Override
 	    public void keyReleased(final KeyEvent e) {
 		if (Estado.getEstado().esEstadoDeJuego()) {
-		    /*
-		     * if (e.getKeyCode() == KeyEvent.VK_I && menuInventario ==
-		     * null) { menuInventario = new MenuInventario(cliente);
-		     * menuInventario.setVisible(true); } if (e.getKeyCode() ==
-		     * KeyEvent.VK_A && menuAsignar == null) { menuAsignar = new
-		     * MenuAsignarSkills(cliente); menuAsignar.setVisible(true);
-		     * } if (e.getKeyCode() == KeyEvent.VK_S && menuStats ==
-		     * null) { menuStats = new MenuStats(cliente);
-		     * menuStats.setVisible(true); } if (e.getKeyCode() ==
-		     * KeyEvent.VK_ESCAPE && menuEscp == null) { menuEscp = new
-		     * MenuEscape(cliente); menuEscp.setVisible(true); } if
-		     * (e.getKeyCode() == KeyEvent.VK_C && ventContac == null) {
-		     * ventContac = new VentanaContactos(cliente.getJuego());
-		     * ventContac.setVisible(true); }
-		     */
 		    Class<?> ventana = mapaKeys.get(e.getKeyCode());
 		    if (ventana != null) {
 			try {

@@ -25,8 +25,6 @@ public class NpcManager {
 
     private static final int RANDOM_LIMITE = 18;
 
-    // private final int CANTIDAD_NPCS = 10;
-
     // Esta clase se encarga del spawn y despawn de NPCs.
 
     // Distancia mínima desde el spawn de un npc hacia cualquier jugador: 416
@@ -151,7 +149,6 @@ public class NpcManager {
 		posX = random.nextInt(mundo.obtenerAncho() - RANDOM_LIMITE) + OFFSET_RANDOM;
 		posY = random.nextInt(mundo.obtenerAlto() - RANDOM_LIMITE) + OFFSET_RANDOM;
 
-
 		for (int j = -1; j < 2; j++) {
 		    for (int k = -1; k < 2; k++) {
 			if (mundo.getTile(posX + j, posY + k).esSolido()) {
@@ -224,7 +221,6 @@ public class NpcManager {
 	    PaqueteNpc actualNpc;
 	    PaqueteMovimiento actualUbicacion;
 
-
 	    while (it.hasNext()) {
 		key = it.next();
 		actualNpc = paquetesNpcs.get(key);
@@ -233,10 +229,8 @@ public class NpcManager {
 		float[] coords = new float[2];
 		coords = Mundo.dosDaIso(actualUbicacion.getPosX(), actualUbicacion.getPosY());
 
-
-		Entidad ente = new Entidad(juego, mundo, ANCHO_ENTIDAD,
-			ALTO_ENTIDAD, actualNpc.getNombre(), coords[0], coords[1],
-			Recursos.getPersonaje().get(actualNpc.getRaza()), VEL_ANIMACION);
+		Entidad ente = new Entidad(juego, mundo, ANCHO_ENTIDAD, ALTO_ENTIDAD, actualNpc.getNombre(), coords[0],
+			coords[1], Recursos.getPersonaje().get(actualNpc.getRaza()), VEL_ANIMACION);
 		ente.setIdEnemigo(key);
 		ente.setDireccion(actualUbicacion.getDireccion());
 		entidadesNpcs.put(key, ente);
