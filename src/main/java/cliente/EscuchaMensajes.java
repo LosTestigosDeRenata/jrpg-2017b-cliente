@@ -44,8 +44,7 @@ public class EscuchaMensajes extends Thread {
 		try {
 			Paquete paquete;
 			ComandosEscucha comand;
-			// ubicacionPersonajes.put(juego.getUbicacionPersonaje().getIdPersonaje(),
-			// juego.getUbicacionPersonaje());
+
 
 			juego.setPersonajesConectados(personajesConectados);
 			juego.setUbicacionPersonajes(ubicacionPersonajes);
