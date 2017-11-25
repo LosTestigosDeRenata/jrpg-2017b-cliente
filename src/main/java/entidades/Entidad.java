@@ -40,7 +40,7 @@ import sun.audio.AudioStream;
  */
 public class Entidad {
 
-    private static final int CANT_VOCES_PERSONAJE = 12;
+    private static final int CANT_VOCES_PERSONAJE = 13;
     private static final int OFFSET_Y_GRAFICAR = 4;
     private static final int ALTO_PANTALLA = 10;
     private static final int DOSCERO = 20;
