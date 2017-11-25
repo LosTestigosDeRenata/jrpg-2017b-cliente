@@ -150,7 +150,7 @@ public class NpcManager {
 		puedoSpawnear = true;
 		posX = random.nextInt(mundo.obtenerAncho() - RANDOM_LIMITE) + OFFSET_RANDOM;
 		posY = random.nextInt(mundo.obtenerAlto() - RANDOM_LIMITE) + OFFSET_RANDOM;
-		// tile = mundo.getTile(posX, posY);
+
 
 		for (int j = -1; j < 2; j++) {
 		    for (int k = -1; k < 2; k++) {
@@ -188,11 +188,6 @@ public class NpcManager {
 	    }
 	}
 
-	/*
-	 * for (Entidad actual : entidadesNpcs.values()) {
-	 * if(paquetesNpcs.get(actual.getIdEnemigo()).getEstado() ==
-	 * Estado.estadoJuego) actual.graficar(g); }
-	 */
     }
 
     /**
@@ -283,12 +278,4 @@ public class NpcManager {
 		+ sufijos[random.nextInt(sufijos.length)];
     }
 
-    /*
-     * public Map<Integer, PaqueteNpc> getPaquetesNpcs() { return paquetesNpcs;
-     * } public void setPaquetesNpcs(Map<Integer, PaqueteNpc> paquetesNpcs) {
-     * this.paquetesNpcs = paquetesNpcs; } public Map<Integer,
-     * PaqueteMovimiento> getUbicacionNpcs() { return ubicacionNpcs; } public
-     * void setUbicacionNpcs(Map<Integer, PaqueteMovimiento> ubicacionNpcs) {
-     * this.ubicacionNpcs = ubicacionNpcs; }
-     */
 }
