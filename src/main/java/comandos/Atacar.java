@@ -41,7 +41,7 @@ public class Atacar extends ComandosEscucha {
 
     @Override
     public void ejecutar() {
-	PaquetePelear pa = (PaquetePelear) gson.fromJson(cadenaLeida, PaquetePelear.class);
+	PaquetePelear pa = gson.fromJson(cadenaLeida, PaquetePelear.class);
 
 	Personaje personaje = null; // Atacante. //
 	Personaje enemigo = null;
@@ -137,8 +137,8 @@ public class Atacar extends ComandosEscucha {
 	}
     }
 
-    public void finalizarBatalla(PaqueteFinalizarBatalla paqueteFinalizarBatalla, Personaje personaje,
-	    Personaje enemigo) {
+    public void finalizarBatalla(final PaqueteFinalizarBatalla paqueteFinalizarBatalla, final Personaje personaje,
+	    final Personaje enemigo) {
 	try {
 	    juego.getCliente().getSalida().writeObject(gson.toJson(paqueteFinalizarBatalla));
 	    EstadoBatalla.paquetePersonaje.setSaludTope(personaje.getSaludTope());

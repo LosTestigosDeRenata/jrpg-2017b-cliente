@@ -48,8 +48,8 @@ public class EstadoBatalla extends Estado {
     private static final int HABILIDAD_5 = Y_IMAGEN;
     private static final int HABILIDAD_4 = 4;
     private static final int HABLIDIAD_3 = 3;
-	private static final int HABLIDIAD_2 = 2;
-	private static final int HABLIDIAD_1 = 1;
+    private static final int HABLIDIAD_2 = 2;
+    private static final int HABLIDIAD_1 = 1;
     private static final int Y_OFFSET = 150;
     private static final int X_OFFSET = -350;
     private final Mundo mundo;
@@ -315,9 +315,9 @@ public class EstadoBatalla extends Estado {
      * Enviar ataque.
      * @param paqueteAtacarParam the paquete atacar
      */
-    public void enviarAtaque(final PaquetePelear paquetePelear) {
+    public void enviarAtaque(final PaquetePelear paquetePelearParam) {
 	try {
-	    juego.getCliente().getSalida().writeObject(gson.toJson(paquetePelear));
+	    juego.getCliente().getSalida().writeObject(gson.toJson(paquetePelearParam));
 	} catch (final IOException e) {
 	    JOptionPane.showMessageDialog(null, "Fallo la conexion con el servidor.");
 	}
@@ -325,6 +325,7 @@ public class EstadoBatalla extends Estado {
 
     /**
      * Finalizar batalla.
+     * @param paqueteFinalizarBatalla paquete para finalizar la batalla
      */
     public void finalizarBatalla(final PaqueteFinalizarBatalla paqueteFinalizarBatalla) {
 	try {
@@ -386,6 +387,7 @@ public class EstadoBatalla extends Estado {
 
     /**
      * Informa de si el estado es EstadoJuego
+     * @return estado del juego
      */
     @Override
     public boolean esEstadoDeJuego() {

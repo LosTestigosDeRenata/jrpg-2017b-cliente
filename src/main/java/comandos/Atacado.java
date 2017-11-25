@@ -7,7 +7,7 @@ public class Atacado extends ComandosEscucha {
 
     @Override
     public void ejecutar() {
-	PaquetePelear pa = (PaquetePelear) gson.fromJson(cadenaLeida, PaquetePelear.class);
+	PaquetePelear pa = gson.fromJson(cadenaLeida, PaquetePelear.class);
 
 	juego.getEstadoBatalla().getEnemigo().actualizarAtributos(pa.getPersonajeAtacante(), pa.getCastaAtacante());
 	juego.getEstadoBatalla().getPersonaje().actualizarAtributos(pa.getPersonajeEnemigo(), pa.getCastaEnemigo());

@@ -348,10 +348,6 @@ public class Recursos {
 	personaje.put("Elfo", elfo);
 
 	// Inicio Entorno
-	// cesped = CargadorImagen.cargarImagen("/Cesped.png");
-	// actualizarBarraDeCarga(++elementosCargados, menuCarga);
-	// roca = CargadorImagen.cargarImagen("/rock.png");
-	// actualizarBarraDeCarga(++elementosCargados, menuCarga);
 	background = CargadorImagen.cargarImagen("/background.jpg");
 	actualizarBarraDeCarga(++elementosCargados, menuCarga);
 	marco = CargadorImagen.cargarImagen("/marco.png");
@@ -360,13 +356,7 @@ public class Recursos {
 	actualizarBarraDeCarga(++elementosCargados, menuCarga);
 	menuEnemigo = CargadorImagen.cargarImagen("/MenuEnemigo.png");
 	actualizarBarraDeCarga(++elementosCargados, menuCarga);
-	// trees = new SpriteSheet(CargadorImagen.cargarImagen("/trees.png"));
-	// actualizarBarraDeCarga(++elementosCargados, menuCarga);
-	// greenTree = trees.getTile(0, 0, 42, 50);
-	// actualizarBarraDeCarga(++elementosCargados, menuCarga);
-	// nievePiso1 = CargadorImagen.cargarImagen("/nieve piso.png");
-	// actualizarBarraDeCarga(++elementosCargados, menuCarga);
-	// iceBlock = CargadorImagen.cargarImagen("/nieve cubo.png");
+
 
 	// Mapa
 	if (MenuMapas.getNumberMap() == 1) {
